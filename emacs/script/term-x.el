@@ -1,6 +1,5 @@
 (require 'xclip)
 (turn-on-xclip)
-(if (not window-system)
-  (require 'xterm-title)
-  (xterm-title-mode t))
+(require 'xterm-title)
+(xterm-title-mode t)
 (setq x-select-enable-clipboard t)

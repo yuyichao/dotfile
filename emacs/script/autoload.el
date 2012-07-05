@@ -14,7 +14,7 @@
 (setq auto-mode-alist (append '(("/*.\.kwinscript$" . js-mode)) auto-mode-alist))
 (setq auto-mode-alist (append '(("/*.\.json$" . js-mode)) auto-mode-alist))
 
-;;(require 'cc-mode)
+(require 'cc-mode)
 ;;(c-initialize-cc-mode t)
 ;;(c-init-language-vars qt-mode)
 ;;(c-common-init 'qt-mode)

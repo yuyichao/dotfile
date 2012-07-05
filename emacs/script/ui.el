@@ -7,11 +7,11 @@
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 ;(setq scroll-step 1) ;; keyboard scroll one line at a time
 (set-window-vscroll nil .5)
+(setq column-number-mode t)
 (setq global-linum-mode t)
 (setq show-paren-mode t)
 (setq global-font-lock-mode t)
 (setq auto-image-file-mode t)
-(setq column-number-mode t)
 (if (fboundp 'tool-bar-mode)
     (tool-bar-mode -1))
 (if (fboundp 'menu-bar-mode)
