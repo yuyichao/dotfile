@@ -36,3 +36,15 @@
 (global-set-key (kbd "M-k") 'windmove-up)
 (global-set-key (kbd "M-l") 'windmove-right)
 ;(global-set-key (kbd "<return>") 'newline-and-indent)
+(global-set-key (kbd "C-c C-j") 'comment-region)
+(global-set-key (kbd "C-c C-k") 'uncomment-region)
+(global-set-key (kbd "C-\\") 'indent-region)
+(defun iwb ()
+  "indent whole buffer"
+  (interactive)
+  (delete-trailing-whitespace)
+  (indent-region (point-min) (point-max) nil)
+  ;; for Makefile....
+  ;; (untabify (point-min) (point-max))
+  )
+(global-set-key (kbd "C-c i b") 'iwb)
