@@ -35,7 +35,7 @@
 (global-set-key (kbd "M-h") 'windmove-left)
 (global-set-key (kbd "M-k") 'windmove-up)
 (global-set-key (kbd "M-l") 'windmove-right)
-(global-set-key (kbd "<return>") 'newline-and-indent)
+;(global-set-key (kbd "<return>") 'newline-and-indent)
 (global-set-key (kbd "C-m") 'newline-and-indent)
 (global-set-key (kbd "C-c C-j") 'comment-region)
 (global-set-key (kbd "C-c C-k") 'uncomment-region)
