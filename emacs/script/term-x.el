@@ -4,4 +4,5 @@
   (require 'xterm-title)
   (xterm-title-mode t)
   (setq x-select-enable-clipboard t)
+  (xterm-mouse-mode t)
   )
