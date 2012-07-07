@@ -10,6 +10,7 @@
   (font-lock-add-keywords
    nil
    '(
+     ;; Calling functions
      ("\\<\\(\\sw+\\)[[:space:]]*(" 1 font-lock-function-call-face)
      ;; Valid hex number (will highlight invalid suffix though)
      ("\\b0x[[:xdigit:]]+[uUlL]*\\b" . font-lock-string-face)

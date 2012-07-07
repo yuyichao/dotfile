@@ -27,7 +27,7 @@
      ;; Calling functions
      ("\\<\\([_a-zA-Z]\\sw*\\)[[:space:]]*(" 1 font-lock-function-call-face)
      ;; Invalid number
-     ("\\b[_a-zA-Z]\\w*[[:space:]]*\\(?:\\.\\|->\\)[[:space:]]*\\([0-9]\\sw*\\)\\b"
+     ("\\(?:\\b[_a-zA-Z]\\w*\\|\\]\\|)\\)[[:space:]]*\\(?:\\.\\|->\\)[[:space:]]*\\([0-9]\\sw*\\)\\b"
       1 font-lock-warning-face)
      ("\\<\\([0-9]\\sw*\\)[[:space:]]*("
       1 font-lock-warning-face)
