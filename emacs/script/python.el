@@ -11,17 +11,24 @@
    nil
    '(
      ;; Calling functions
-     ("\\<\\(\\sw+\\)[[:space:]]*(" 1 font-lock-function-call-face)
+     ("\\<\\([_a-zA-Z]\\sw*\\)[[:space:]]*(" 1 font-lock-function-call-face)
+     ;; Invalid number
+     ("\\(?:\\b[_a-zA-Z]\\w*\\|\\]\\|)\\)[[:space:]]*\\.[[:space:]]*\\([0-9]\\sw*\\)\\b"
+      1 font-lock-warning-face)
+     ("\\<\\([0-9]\\sw*\\)[[:space:]]*("
+      1 font-lock-warning-face)
      ;; Valid hex number (will highlight invalid suffix though)
-     ("\\b0x[[:xdigit:]]+[uUlL]*\\b" . font-lock-string-face)
+     ("\\b0x[0-9a-f]+\\b" . font-lock-string-face)
      ;; Invalid hex number
      ("\\b0x\\(\\w\\|\\.\\)+\\b" . font-lock-warning-face)
      ;; Valid floating point number.
-     ("\\(\\b[0-9]+\\|\\)\\(\\.\\)\\([0-9]+\\(e[-]?[0-9]+\\)?\\)\\b"
-      (1 font-lock-string-face) (3 font-lock-string-face))
+     ("\\b[0-9]*\\([0-9]\\.\\|\\.[0-9]\\)[0-9]*\\([eE][-]?[0-9]+\\)?\\b"
+      . font-lock-string-face)
+     ("\\b\\([0-9]+\\(\\.\\)?[0-9]*\\|\\.[0-9]+\\)[eE][-]?[0-9]+\\b"
+      . font-lock-string-face)
 
      ;; Invalid floating point number.  Must be before valid decimal.
-     ("\\b[0-9].*?\\..+?\\b" . font-lock-warning-face)
+     ;; ("\\b[0-9].*?\\..+?\\b" . font-lock-warning-face)
 
      ;; Valid decimal number.  Must be before octal regexes otherwise 0
      ;; will be highlighted as errors.  Will highlight invalid suffix though.
