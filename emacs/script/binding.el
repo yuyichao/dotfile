@@ -1,13 +1,21 @@
 (defun backward-kill-line (arg)
   (interactive "p")
   (kill-line 0))
-;(global-set-key (quote [67108908]) 'shrink-window)
-;(global-set-key (quote [67108910]) 'enlarge-window)
-;(global-set-key (quote [67108924]) 'shrink-window-horizontally)
-;(global-set-key (quote [67108926]) 'enlarge-window-horizontally)
-(global-set-key (kbd "C-j") 'backward-kill-line)
+;; (global-set-key (quote [67108908]) 'shrink-window)
+;; (global-set-key (quote [67108910]) 'enlarge-window)
+;; (global-set-key (quote [67108924]) 'shrink-window-horizontally)
+;; (global-set-key (quote [67108926]) 'enlarge-window-horizontally)
+
+;; keys to play arround with:
+;; C-h; C-_(C-/, C--); C-]
+;; C-x's :
+;; C-a; C-h;
+;; almost all C-c's
+(global-set-key (kbd "C-_") 'backward-kill-line)
+(global-set-key (kbd "C-/") 'backward-kill-line)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-q") 'move-beginning-of-line)
+;; looking for a better one....
 (global-set-key (kbd "C-h") 'quoted-insert)
 (global-set-key (kbd "C-x <home>") 'toggle-read-only)
 (global-set-key (kbd "C-x h") 'help-command)
@@ -30,12 +38,13 @@
 (global-set-key (kbd "C-x <end>") 'help-command)
 (global-set-key (kbd "C-x C-k <end>") 'kmacro-edit-macro-repeat)
 (global-set-key (kbd "C-x h <end>") 'view-external-packages)
+(global-set-key (kbd "C-c C-w") 'delete-region)
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "M-j") 'windmove-down)
 (global-set-key (kbd "M-h") 'windmove-left)
 (global-set-key (kbd "M-k") 'windmove-up)
 (global-set-key (kbd "M-l") 'windmove-right)
-;(global-set-key (kbd "<return>") 'newline-and-indent)
+;; (global-set-key (kbd "<return>") 'newline-and-indent)
 (global-set-key (kbd "C-m") 'newline-and-indent)
 (global-set-key (kbd "C-c C-j") 'comment-region)
 (global-set-key (kbd "C-c C-k") 'uncomment-region)

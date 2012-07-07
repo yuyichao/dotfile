@@ -22,18 +22,30 @@
   (font-lock-add-keywords
    nil
    '(
-     ("\\<\\([_0-9A-Z]+\\)[[:space:]]*(" 1 font-lock-macro-call-face)
-     ("\\<\\(\\sw+\\)[[:space:]]*(" 1 font-lock-function-call-face)
+     ;; Calling macros
+     ("\\<\\([_A-Z][_0-9A-Z]*\\)[[:space:]]*(" 1 font-lock-macro-call-face)
+     ;; Calling functions
+     ("\\<\\([_a-zA-Z]\\sw*\\)[[:space:]]*(" 1 font-lock-function-call-face)
+     ;; Invalid number
+     ("\\b[_a-zA-Z]\\w*[[:space:]]*\\(?:\\.\\|->\\)[[:space:]]*\\([0-9]\\sw*\\)\\b"
+      1 font-lock-warning-face)
+     ("\\<\\([0-9]\\sw*\\)[[:space:]]*("
+      1 font-lock-warning-face)
+     ;; Valid hex floating point number.
+     ("\\b0x\\([0-9a-f]+\\(\\.\\)?[0-9a-f]*\\|\\.[0-9a-f]+\\)[pP][-]?[0-9]+[dDlLfF]?\\b"
+      . font-lock-string-face)
      ;; Valid hex number (will highlight invalid suffix though)
-     ("\\b0x[[:xdigit:]]+[uUlL]*\\b" . font-lock-string-face)
+     ("\\b0x[0-9a-f]+[uUlL]*\\b" . font-lock-string-face)
      ;; Invalid hex number
      ("\\b0x\\(\\w\\|\\.\\)+\\b" . font-lock-warning-face)
      ;; Valid floating point number.
-     ("\\(\\b[0-9]+\\|\\)\\(\\.\\)\\([0-9]+\\(e[-]?[0-9]+\\)?\\([lL]?\\|[dD]?[fF]?\\)\\)\\b"
-      (1 font-lock-string-face) (3 font-lock-string-face))
+     ("\\b[0-9]*\\([0-9]\\.\\|\\.[0-9]\\)[0-9]*\\([eE][-]?[0-9]+\\)?[dD]?[lLfF]?\\b"
+      . font-lock-string-face)
+     ("\\b\\([0-9]+\\(\\.\\)?[0-9]*\\|\\.[0-9]+\\)[eE][-]?[0-9]+[dD]?[lLfF]?\\b"
+      . font-lock-string-face)
 
      ;; Invalid floating point number.  Must be before valid decimal.
-     ("\\b[0-9].*?\\..+?\\b" . font-lock-warning-face)
+     ;; ("\\b[0-9].*?\\..+?\\b" . font-lock-warning-face)
 
      ;; Valid decimal number.  Must be before octal regexes otherwise 0 and 0l
      ;; will be highlighted as errors.  Will highlight invalid suffix though.
@@ -49,9 +61,10 @@
 
      ;; Invalid number.  Must be last so it only highlights anything not
      ;; matched above.
-     ("\\b[0-9]\\(\\w\\|\\.\\)+?\\b" . font-lock-warning-face)
-     ("\\b\\([_0-9A-Z]+\\)\\b" 1 font-lock-macro-face)
+     ("\\b[0-9]\\(\\sw\\|\\.\\)+?\\b" . font-lock-warning-face)
+
      ("\\(?:->\\|\\.\\)[[:space:]]*\\(\\sw+\\)\\b" 1 font-lock-member-face)
+     ("\\b\\([_A-Z][_0-9A-Z]*\\)\\b" 1 font-lock-macro-face)
      ) t)
   )
 (require 'xcscope)
