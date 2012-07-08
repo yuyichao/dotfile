@@ -13,6 +13,8 @@
   ;; (define-key c++-mode-map (kbd "<backspace>") 'c-hungry-delete-backwards)
   (define-key c-mode-map (kbd "M-j") 'windmove-down)
   (define-key c++-mode-map (kbd "M-j") 'windmove-down)
+  (define-key c-mode-map (kbd "C-c C-w") 'delete-region)
+  (define-key c++-mode-map (kbd "C-c C-w") 'delete-region)
   (setq indent-tabs-mode nil)
   (c-set-style "K&R")
   (c-toggle-hungry-state t)

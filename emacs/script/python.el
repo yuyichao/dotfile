@@ -5,6 +5,7 @@
   ;; (define-key python-mode-map (kbd "<return>") 'newline-and-indent)
   ;; (define-key python-mode-map (kbd "C-m") 'newline-and-indent)
   ;; (define-key python-mode-map (kbd "M-j") 'windmove-down)
+  (define-key python-mode-map (kbd "C-c C-k") 'uncomment-region)
   (setq indent-tabs-mode nil)
   (which-function-mode t)
   (font-lock-add-keywords
