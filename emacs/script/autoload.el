@@ -6,12 +6,14 @@
                                  . pkgbuild-mode)) auto-mode-alist))
 
 (autoload 'php-mode "php-mode.el" "Php mode." t)
-(setq auto-mode-alist (append '(("/*.\.php[345]?$" . php-mode)) auto-mode-alist))
+(setq auto-mode-alist (append '(("/*.\.php[345]?$" . php-mode))
+                              auto-mode-alist))
 
 (autoload 'markdown-mode "markdown-mode.el"
   "Major mode for editing Markdown files" t)
 (setq auto-mode-alist (append '(("/*.\.md$" . markdown-mode)) auto-mode-alist))
-(setq auto-mode-alist (append '(("/*.\.kwinscript$" . js-mode)) auto-mode-alist))
+(setq auto-mode-alist (append '(("/*.\.kwinscript$" . js-mode))
+                              auto-mode-alist))
 (setq auto-mode-alist (append '(("/*.\.json$" . js-mode)) auto-mode-alist))
 
 (require 'cc-mode)

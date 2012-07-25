@@ -34,10 +34,10 @@
      ("\\<\\([0-9]\\sw*\\)[[:space:]]*("
       1 font-lock-warning-face)
      ;; Valid hex floating point number.
-     ("\\b0x\\([0-9a-f]+\\(\\.\\)?[0-9a-f]*\\|\\.[0-9a-f]+\\)[pP][-]?[0-9]+[dDlLfF]?\\b"
+     ("\\b0x\\([0-9a-fA-F]+\\(\\.\\)?[0-9a-fA-F]*\\|\\.[0-9a-fA-F]+\\)[pP][-]?[0-9]+[dDlLfF]?\\b"
       . font-lock-string-face)
      ;; Valid hex number (will highlight invalid suffix though)
-     ("\\b0x[0-9a-f]+[uUlL]*\\b" . font-lock-string-face)
+     ("\\b0x[0-9a-fA-F]+[uUlL]*\\b" . font-lock-string-face)
      ;; Invalid hex number
      ("\\b0x\\(\\w\\|\\.\\)+\\b" . font-lock-warning-face)
      ;; Valid floating point number.
