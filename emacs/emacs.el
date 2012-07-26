@@ -28,7 +28,7 @@
  '(show-paren-mode t)
  '(tool-bar-mode nil)
  '(which-function-mode t)
- '(whitespace-style '(face tabs spaces trailing lines space-before-tab
+ '(whitespace-style '(face tabs spaces trailing space-before-tab ; lines
                            newline indentation empty space-after-tab
                            space-mark tab-mark newline-mark))
  )
