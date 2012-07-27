@@ -24,8 +24,7 @@
 (add-to-list 'auto-mode-alist '("CMakeLists\\.txt\\'" . cmake-mode))
 (add-to-list 'auto-mode-alist '("\\.cmake\\'" . cmake-mode))
 
-(autoload 'go-mode "go-mode-load.el" "Go mode" t)
-(add-to-list 'auto-mode-alist '("\.go$" . go-mode))
+(require 'go-mode-load)
 
 (require 'egg)
 (require 'multi-term)
