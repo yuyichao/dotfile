@@ -1,11 +1,18 @@
-(require 'python-mode)
-(add-hook 'python-mode-hook 'my-py-mode)
+(autoload 'python-mode "python-mode.el" "Python mode." t)
+(add-to-list 'auto-mode-alist '("/*.\.py$" . python-mode))
+
+(defun load-python-hook()
+  (add-hook 'python-mode-hook 'my-py-mode)
+  )
+(eval-after-load "python-mode" '(load-python-hook))
+
 (defun my-py-mode()
   (interactive)
   ;; (define-key python-mode-map (kbd "<return>") 'newline-and-indent)
   ;; (define-key python-mode-map (kbd "C-m") 'newline-and-indent)
   ;; (define-key python-mode-map (kbd "M-j") 'windmove-down)
   (define-key python-mode-map (kbd "C-c C-k") 'uncomment-region)
+  (define-key python-mode-map (kbd "C-c C-w") 'delete-region)
   (setq indent-tabs-mode nil)
   (which-function-mode t)
   (font-lock-add-keywords
@@ -48,4 +55,3 @@
      ("\\b[0-9]\\(\\w\\|\\.\\)+?\\b" . font-lock-warning-face)
      ) t)
   )
-(require 'xcscope)
