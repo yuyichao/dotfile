@@ -10,8 +10,7 @@
 
 (eval-after-load "cc-mode" '(load-cc-hook))
 
-(defun my-c-mode()
-  (interactive)
+(defun my-set-c-mode-map()
   ;; (define-key c-mode-map (kbd "<return>") 'newline-and-indent)
   ;; (define-key c++-mode-map (kbd "<return>") 'newline-and-indent)
   ;; (define-key c-mode-map (kbd "C-m") 'newline-and-indent)
@@ -20,17 +19,21 @@
   ;; (define-key c++-mode-map (kbd "C-?") 'c-hungry-delete-backwards)
   ;; (define-key c-mode-map (kbd "<backspace>") 'c-hungry-delete-backwards)
   ;; (define-key c++-mode-map (kbd "<backspace>") 'c-hungry-delete-backwards)
-  (require 'cedet)
   (define-key c-mode-map (kbd "M-j") 'windmove-down)
   (define-key c++-mode-map (kbd "M-j") 'windmove-down)
   (define-key c-mode-map (kbd "C-c C-w") 'delete-region)
   (define-key c++-mode-map (kbd "C-c C-w") 'delete-region)
+  )
+
+(defun my-set-c-style()
   (setq indent-tabs-mode nil)
   (c-set-style "K&R")
   (c-toggle-hungry-state t)
   (setq c-basic-offset 4)
-  (imenu-add-menubar-index)
   (which-function-mode t)
+  )
+
+(defun my-set-c-highlight()
   (font-lock-add-keywords
    nil
    '(
@@ -79,6 +82,30 @@
      ("\\b\\([_A-Z][_0-9A-Z]*\\)\\b" 1 font-lock-macro-face)
      ) t)
   )
+
+(require 'cedet)
+
+(defun my-set-c-cedet()
+  (setq semantic-default-submodes '(global-semanticdb-minor-mode
+                                    global-semantic-idle-scheduler-mode
+                                    global-semantic-idle-summary-mode
+                                    global-semantic-idle-completions-mode
+                                    global-semantic-decoration-mode
+                                    global-semantic-highlight-func-mode
+                                    global-semantic-mru-bookmark-mode))
+  (semantic-mode)
+  (semantic-idle-local-symbol-highlight-mode t)
+  )
+
+(defun my-c-mode()
+  (interactive)
+  (my-set-c-mode-map)
+  (my-set-c-style)
+  (my-set-c-highlight)
+  (my-set-c-cedet)
+  (imenu-add-menubar-index)
+  )
+
 (require 'xcscope)
 (add-hook 'cscope-list-entry-hook 'my-cscope-mode)
 (defun my-cscope-mode()
