@@ -83,7 +83,7 @@
      ) t)
   )
 
-(require 'cedet)
+;; (require 'cedet)
 
 (defun my-set-c-cedet()
   (setq semantic-default-submodes '(global-semanticdb-minor-mode
@@ -102,7 +102,7 @@
   (my-set-c-mode-map)
   (my-set-c-style)
   (my-set-c-highlight)
-  (my-set-c-cedet)
+  ;; (my-set-c-cedet)
   (imenu-add-menubar-index)
   )
 
