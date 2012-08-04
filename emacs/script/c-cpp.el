@@ -53,6 +53,10 @@
      ("\\b0x[0-9a-fA-F]+[uUlL]*\\b" . font-lock-string-face)
      ;; Invalid hex number
      ("\\b0x\\(\\w\\|\\.\\)+\\b" . font-lock-warning-face)
+     ;; Valid binary number
+     ("\\b0b[01]+[uUlL]*\\b" . font-lock-string-face)
+     ;; Invalid hex number
+     ("\\b0b\\(\\w\\|\\.\\)+\\b" . font-lock-warning-face)
      ;; Valid floating point number.
      ("\\b[0-9]*\\([0-9]\\.\\|\\.[0-9]\\)[0-9]*\\([eE][-]?[0-9]+\\)?[dD]?[lLfF]?\\b"
       . font-lock-string-face)

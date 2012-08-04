@@ -13,6 +13,9 @@
 (add-to-list 'auto-mode-alist '("\.js$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\.json$" . js2-mode))
 
+(autoload 'qml-mode "qml-mode.el" "Qml mode." t)
+(add-to-list 'auto-mode-alist '("\.qml$" . qml-mode))
+
 (autoload 'vala-mode "vala-mode.el" "Major mode for editing Vala code." t)
 (add-to-list 'auto-mode-alist '("\.vala$" . vala-mode))
 (add-to-list 'auto-mode-alist '("\.vapi$" . vala-mode))
