@@ -34,3 +34,8 @@
 
 (autoload 'lua-mode "lua-mode.el" "Lua editing mode." t)
 (add-to-list 'auto-mode-alist '("\.lua$" . lua-mode))
+
+(autoload 'cython-mode "cython-mode.el" "Major mode for Cython development." t)
+(add-to-list 'auto-mode-alist '("\\.pyx\\'" . cython-mode))
+(add-to-list 'auto-mode-alist '("\\.pxd\\'" . cython-mode))
+(add-to-list 'auto-mode-alist '("\\.pxi\\'" . cython-mode))

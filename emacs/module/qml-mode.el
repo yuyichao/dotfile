@@ -1,148 +1,136 @@
 (defvar qml-mode-hook nil)
 
-;;(defvar qml-font-lock-default-face 'qml-font-lock-default-face)
-
-(let ((red "#a35757")
-      (green "#7ac470")
-      (yellow "#dfe14e")
-      (orange "#ef6d22")
-      (blue "#5083b2")
-      (magenta "#b781ac")
-      (cyan "#b0b5d2")
-      (white "#f0f0f0"))
-
-  (defface qml-preprocessor-kwds-face
-    `((t (:foreground ,yellow)))
-    "*Face for preprocesor directives."
-    )
-  (defvar qml-preprocessor-kwds-face 'qml-preprocessor-kwds-face)
-
-  (defface qml-constant-kwds-face
-    `((t (:foreground ,cyan)))
-    "*"
-    )
-  (defvar qml-constant-kwds-face 'qml-constant-kwds-face)
-
-  (defface qml-global-funcs-face
-    `((t (:foreground ,red)))
-    "*"
-    )
-  (defvar qml-global-funcs-face 'qml-global-funcs-face)
-
-  (defface qml-global-classes
-    `((t (:foreground ,blue)))
-    "*"
-    )
-  (defvar qml-global-classes 'qml-global-classes)
-
-  (defface qml-global-props-face
-    `((t (:foreground ,blue)))
-    "*"
-    )
-  (defvar qml-global-props-face 'qml-global-props-face)
-
-  (defface qml-operators-face
-    `((t (:foreground ,yellow)))
-    "*"
-    )
-  (defvar qml-operators-face 'qml-operators-face)
-
-  (defface qml-specifier-kwds-face
-    `((t (:foreground ,magenta)))
-    "*"
-    )
-  (defvar qml-specifier-kwds-face 'qml-specifier-kwds-face)
-
-  (defface qml-package-kwds-face
-    `((t (:foreground ,yellow)))
-    "*"
-    )
-  (defvar qml-package-kwds-face 'qml-package-kwds-face)
-
-  (defface qml-class-kwds-face
-    `((t (:foreground ,yellow)))
-    "*"
-    )
-  (defvar qml-class-kwds-face 'qml-class-kwds-face)
-
-  (defface qml-other-decl-kwds-face
-    `((t (:foreground ,yellow)))
-    "*"
-    )
-  (defvar qml-other-decl-kwds-face 'qml-other-decl-kwds-face)
-
-  (defface qml-other-decl-2-kwds-face
-    `((t (:foreground ,blue)))
-    "* function, var"
-    )
-  (defvar qml-other-decl-2-kwds-face 'qml-other-decl-2-kwds-face)
-
-  (defface qml-decl-level-kwds-face
-    `((t (:foreground ,yellow)))
-    "*"
-    )
-  (defvar qml-decl-level-kwds-face 'qml-decl-level-kwds-face)
-
-  (defface qml-conditional-kwds-face
-    `((t (:foreground ,yellow)))
-    "*"
-    )
-  (defvar qml-conditional-kwds-face 'qml-conditional-kwds-face)
-
-  (defface qml-block-stmt-1-kwds-face
-    `((t (:foreground ,yellow)))
-    "*"
-    )
-  (defvar qml-block-stmt-1-kwds-face 'qml-block-stmt-1-kwds-face)
-
-  (defface qml-simple-stmt-kwds-face
-    `((t (:foreground ,yellow)))
-    "*"
-    )
-  (defvar qml-simple-stmt-kwds-face 'qml-simple-stmt-kwds-face)
-
-  (defface qml-label-kwds-face
-    `((t (:foreground ,yellow)))
-    "*"
-    )
-  (defvar qml-label-kwds-face 'qml-label-kwds-face)
-
-  (defface qml-expr-kwds-face
-    `((t (:foreground ,red)))
-    "*"
-    )
-  (defvar qml-expr-kwds-face 'qml-expr-kwds-face)
-
-  (defface qml-other-kwds-face
-    `((t (:foreground ,red)))
-    "*"
-    )
-  (defvar qml-other-kwds-face 'qml-other-kwds-face)
-
-  (defface qml-package-name-face
-    `((t (:foreground ,green)))
-    "*"
-    )
-  (defvar qml-package-name-face 'qml-package-name-face)
-
-  (defface qml-class-name-face
-    `((t (:foreground ,cyan)))
-    "*"
-    )
-  (defvar qml-class-name-face 'qml-class-name-face)
-
-  (defface qml-function-name-face
-    `((t (:foreground ,green)))
-    "*"
-    )
-  (defvar qml-function-name-face 'qml-function-name-face)
-
-  (defface qml-variable-name-face
-    `((t (:foreground ,cyan)))
-    "*"
-    )
-  (defvar qml-variable-name-face 'qml-variable-name-face)
+(defface qml-preprocessor-kwds-face
+  `((t (:foreground "yellow")))
+  "*Face for preprocesor directives."
   )
+(defvar qml-preprocessor-kwds-face 'qml-preprocessor-kwds-face)
+
+(defface qml-constant-kwds-face
+  `((t (:foreground "cyan")))
+  "*"
+  )
+(defvar qml-constant-kwds-face 'qml-constant-kwds-face)
+
+(defface qml-global-funcs-face
+  `((t (:foreground "red")))
+  "*"
+  )
+(defvar qml-global-funcs-face 'qml-global-funcs-face)
+
+(defface qml-global-classes
+  `((t (:foreground "blue")))
+  "*"
+  )
+(defvar qml-global-classes 'qml-global-classes)
+
+(defface qml-global-props-face
+  `((t (:foreground "blue")))
+  "*"
+  )
+(defvar qml-global-props-face 'qml-global-props-face)
+
+(defface qml-operators-face
+  `((t (:foreground "yellow")))
+  "*"
+  )
+(defvar qml-operators-face 'qml-operators-face)
+
+(defface qml-specifier-kwds-face
+  `((t (:foreground "magenta")))
+  "*"
+  )
+(defvar qml-specifier-kwds-face 'qml-specifier-kwds-face)
+
+(defface qml-package-kwds-face
+  `((t (:foreground "yellow")))
+  "*"
+  )
+(defvar qml-package-kwds-face 'qml-package-kwds-face)
+
+(defface qml-class-kwds-face
+  `((t (:foreground "yellow")))
+  "*"
+  )
+(defvar qml-class-kwds-face 'qml-class-kwds-face)
+
+(defface qml-other-decl-kwds-face
+  `((t (:foreground "yellow")))
+  "*"
+  )
+(defvar qml-other-decl-kwds-face 'qml-other-decl-kwds-face)
+
+(defface qml-other-decl-2-kwds-face
+  `((t (:foreground "blue")))
+  "* function, var"
+  )
+(defvar qml-other-decl-2-kwds-face 'qml-other-decl-2-kwds-face)
+
+(defface qml-decl-level-kwds-face
+  `((t (:foreground "yellow")))
+  "*"
+  )
+(defvar qml-decl-level-kwds-face 'qml-decl-level-kwds-face)
+
+(defface qml-conditional-kwds-face
+  `((t (:foreground "yellow")))
+  "*"
+  )
+(defvar qml-conditional-kwds-face 'qml-conditional-kwds-face)
+
+(defface qml-block-stmt-1-kwds-face
+  `((t (:foreground "yellow")))
+  "*"
+  )
+(defvar qml-block-stmt-1-kwds-face 'qml-block-stmt-1-kwds-face)
+
+(defface qml-simple-stmt-kwds-face
+  `((t (:foreground "yellow")))
+  "*"
+  )
+(defvar qml-simple-stmt-kwds-face 'qml-simple-stmt-kwds-face)
+
+(defface qml-label-kwds-face
+  `((t (:foreground "yellow")))
+  "*"
+  )
+(defvar qml-label-kwds-face 'qml-label-kwds-face)
+
+(defface qml-expr-kwds-face
+  `((t (:foreground "red")))
+  "*"
+  )
+(defvar qml-expr-kwds-face 'qml-expr-kwds-face)
+
+(defface qml-other-kwds-face
+  `((t (:foreground "red")))
+  "*"
+  )
+(defvar qml-other-kwds-face 'qml-other-kwds-face)
+
+(defface qml-package-name-face
+  `((t (:foreground "green")))
+  "*"
+  )
+(defvar qml-package-name-face 'qml-package-name-face)
+
+(defface qml-class-name-face
+  `((t (:foreground "cyan")))
+  "*"
+  )
+(defvar qml-class-name-face 'qml-class-name-face)
+
+(defface qml-function-name-face
+  `((t (:foreground "green")))
+  "*"
+  )
+(defvar qml-function-name-face 'qml-function-name-face)
+
+(defface qml-variable-name-face
+  `((t (:foreground "cyan")))
+  "*"
+  )
+(defvar qml-variable-name-face 'qml-variable-name-face)
 
 (defconst qml-font-lock-keywords
   (let ((kw1 (mapconcat
@@ -336,7 +324,7 @@
     (indent-line-to cur-indent)
     (if (< (point) cur)
         (goto-char cur)
-        )
+      )
     ))
 ;; (and start
 ;;      end
