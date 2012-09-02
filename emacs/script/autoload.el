@@ -9,9 +9,11 @@
   "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\.md$" . markdown-mode))
 
-(autoload 'js2-mode "js2-mode.el" "Javascript mode." t)
-(add-to-list 'auto-mode-alist '("\.js$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\.json$" . js2-mode))
+;; (autoload 'js2-mode "js2-mode.el" "Javascript mode." t)
+;; (add-to-list 'auto-mode-alist '("\.js$" . js2-mode))
+;; (add-to-list 'auto-mode-alist '("\.json$" . js2-mode))
+(add-to-list 'auto-mode-alist '("\.js$" . js-mode))
+(add-to-list 'auto-mode-alist '("\.json$" . js-mode))
 
 (autoload 'qml-mode "qml-mode.el" "Qml mode." t)
 (add-to-list 'auto-mode-alist '("\.qml$" . qml-mode))

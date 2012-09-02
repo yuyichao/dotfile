@@ -69,3 +69,5 @@
   'exit-minibuffer)
 (define-key minibuffer-local-completion-map (kbd "<return>")
   'exit-minibuffer)
+(eval-after-load "sgml-mode"
+  '(define-key html-mode-map (kbd "C-c C-j") 'comment-region))

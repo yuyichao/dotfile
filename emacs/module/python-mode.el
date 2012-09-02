@@ -2761,7 +2761,7 @@ Used with `eval-after-load'."
          ("(python-lib)Function-Method-Variable Index" nil "")
          ("(python-lib)Miscellaneous Index" nil ""))))))
 (eval-after-load "info-look" '(python-after-info-look))
-
+
 ;;;; Miscellany.
 
 ;; Called from `python-mode', this causes a recursive call of the
@@ -2927,9 +2927,9 @@ of current line."
           (when (= (current-indentation) 0)
             (throw 'done nil))))
       (when accum
-	(when (and length-limit (> length length-limit))
-	  (setcar accum ".."))
-	(mapconcat 'identity accum ".")))))
+        (when (and length-limit (> length length-limit))
+          (setcar accum ".."))
+        (mapconcat 'identity accum ".")))))
 
 (defun python-mark-block ()
   "Mark the block around point.
@@ -2944,7 +2944,7 @@ Uses `python-beginning-of-block', `python-end-of-block'."
 ;; Fixme:  Provide a find-function-like command to find source of a
 ;; definition (separate from BicycleRepairMan).  Complicated by
 ;; finding the right qualified name.
-
+
 ;;;; Completion.
 
 ;; http://lists.gnu.org/archive/html/bug-gnu-emacs/2008-01/msg00076.html
@@ -2980,11 +2980,11 @@ Uses `python-beginning-of-block', `python-end-of-block'."
                        ;; doc for a function in the buffer and the import will lose if the
                        ;; Python sub-process' working directory isn't the same as the
                        ;; buffer's.
-                       ;; 			 (if buffer-file-name
-                       ;; 			     (concat
-                       ;; 			      "import "
-                       ;; 			      (file-name-sans-extension
-                       ;; 			       (file-name-nondirectory buffer-file-name))))
+                       ;;                        (if buffer-file-name
+                       ;;                            (concat
+                       ;;                             "import "
+                       ;;                             (file-name-sans-extension
+                       ;;                              (file-name-nondirectory buffer-file-name))))
                        (nreverse lines))
               "None"))
       (when lines
@@ -2997,16 +2997,16 @@ Uses `python-beginning-of-block', `python-end-of-block'."
 
 (defun python-completion-at-point ()
   (let ((end (point))
-	(start (save-excursion
-		 (and (re-search-backward
-		       (rx (or buffer-start (regexp "[^[:alnum:]._]"))
-			   (group (1+ (regexp "[[:alnum:]._]"))) point)
-		       nil t)
-		      (match-beginning 1)))))
+        (start (save-excursion
+                 (and (re-search-backward
+                       (rx (or buffer-start (regexp "[^[:alnum:]._]"))
+                           (group (1+ (regexp "[[:alnum:]._]"))) point)
+                       nil t)
+                      (match-beginning 1)))))
     (when start
       (list start end
             (completion-table-dynamic 'python-symbol-completions)))))
-
+
 ;;; FFAP support
 
 (defun python-module-path (module)
@@ -3015,7 +3015,7 @@ Uses `python-beginning-of-block', `python-end-of-block'."
 
 (eval-after-load "ffap"
   '(push '(python-mode . python-module-path) ffap-alist))
-
+
 ;;;; Find-function support
 
 ;; Fixme: key binding?
@@ -3195,7 +3195,7 @@ Used for syntactic keywords.  N is the match number (1, 2 or 3)."
      ;; nil, which is OK.
      )))
 
-
+
 ;;; Keymap and syntax
 
 (defvar py-shell-map nil
@@ -3242,7 +3242,7 @@ This function does not modify point or mark."
                (t (error "Unknown buffer position requested: %s" position))) (point))))
     erg))
 
-
+
 ;;; Python specialized rx
 
 (eval-when-compile
@@ -3267,7 +3267,7 @@ This function does not modify point or mark."
                                        ">>=" "<<=" "&=" "^=" "|="))))
     "Additional Python specific sexps for `python-rx'"))
 
-
+
 ;;; Font-lock and syntax
 (defun python-info-ppss-context (type &optional syntax-ppss)
   "Return non-nil if point is on TYPE using SYNTAX-PPSS.
@@ -3387,10 +3387,10 @@ character address of the specified TYPE."
         ))
 
 (defconst py-font-lock-syntactic-keywords
-  '(("[^\\]\\\\\\(?:\\\\\\\\\\)*\\(\\s\"\\)\\1\\(\\1\\)"
+  '(("[^\\]\\\\\\(?:\\\\\\\\\\)*\\(\\s\"\\|\\s'\\)\\1\\(\\1\\)"
      (2
       (7)))
-    ("\\([RUBrub]?\\)[Rr]?\\(\\s\"\\)\\2\\(\\2\\)"
+    ("\\([RUBrub]?\\)[Rr]?\\(\\s\"\\|\\s'\\)\\2\\(\\2\\)"
      (1
       (py-quote-syntax 1))
      (2
@@ -3560,7 +3560,7 @@ Used by `py-electric-colon', which will not indent than. "
                     (looking-at py-def-re))))
     erg))
 
-
+
 ;; Electric deletion
 (defun py-electric-backspace (&optional arg)
   "Delete preceding character or level of indentation.
@@ -3625,7 +3625,7 @@ With ARG do that ARG times. "
 (put 'py-electric-delete 'delete-selection 'supersede) ;delsel
 (put 'py-electric-delete 'pending-delete 'supersede) ;pending-del
 
-
+
 (defun py-indent-line-outmost (&optional arg)
   "Indent the current line to the outmost reasonable indent.
 
@@ -5263,7 +5263,7 @@ Optional ARG indicates a start-position for `parse-partial-sexp'."
     (save-excursion
       (unless erg (setq erg
                         (progn
-                          (when (looking-at "\"\"\"\\|''''")
+                          (when (looking-at "\"\"\"\\|'''")
                             (goto-char (match-end 0))
                             (setq pps (syntax-ppss))
                             (when (and (nth 3 pps) (nth 8 pps)) (nth 2 pps)))))))
@@ -7951,7 +7951,7 @@ Optional \\[universal-argument] prompts for options to pass to the Python3.2 int
   (py-set-shell-completion-environment)
   (py-shell argprompt t "python3.2" 'switch))
 
-
+
 ;;; Code execution commands
 (declare-function compilation-shell-minor-mode "compile" (&optional arg))
 
@@ -8964,7 +8964,7 @@ named for funcname or define a function funcname."
           (setq got buf)))
     got))
 
-
+
 ;; pdbtrack functions
 (defun py-pdbtrack-toggle-stack-tracking (arg)
   "Set variable `py-pdbtrack-do-tracking-p'. "
@@ -9002,7 +9002,7 @@ Useful for newly defined symbol, not known to python yet. "
       (goto-char (point-min))
       (when (re-search-forward (concat py-def-or-class-re " *" symb) nil (quote move) 1)
         (forward-line 1)
-        (when (looking-at "[ \t]*\"\"\"\\|[ \t]*'''\\|[ \t]*'[^]+\\|[ \t]*\"[^\"]+")
+        (when (looking-at "[ \t]*\"\"\"\\|[ \t]*'''\\|[ \t]*'[^']+\\|[ \t]*\"[^\"]+")
           (goto-char (match-end 0))
           (setq erg (buffer-substring-no-properties (match-beginning 0) (re-search-forward "\"\"\"\\|'''" nil 'move)))
           (when erg
@@ -9090,7 +9090,7 @@ Optional \\[universal-argument] used for debugging, will prevent deletion of tem
     (when (file-readable-p file)
       (unless (eq 4 (prefix-numeric-value arg)) (delete-file file)))))
 
-
+
 ;;; Documentation
 (defun py-dump-help-string (str)
   (with-output-to-temp-buffer "*Help*"
@@ -10714,6 +10714,9 @@ For now, simply returns `last-command-event'"
                        ((eq class (car (string-to-syntax "\"")))
                         ;; syntax class "string quote
                         (define-key map (string char) 'autopair-insert-or-skip-quote))
+                       ((eq class (car (string-to-syntax "'")))
+                        ;; syntax class "string quote
+                        (define-key map (string char) 'autopair-insert-or-skip-quote))
                        ((eq class (car (string-to-syntax "$")))
                         ;; syntax class "paired-delimiter"
                         ;;
@@ -10803,6 +10806,7 @@ A list of four elements is returned:
       (cond ((eq (syntax-class syntax-entry) (car (string-to-syntax "(")))
              (cdr syntax-entry))
             ((or (eq (syntax-class syntax-entry) (car (string-to-syntax "\"")))
+                 (eq (syntax-class syntax-entry) (car (string-to-syntax "'")))
                  (eq (syntax-class syntax-entry) (car (string-to-syntax "$"))))
              delim)
             ((and (not closing)
@@ -11388,7 +11392,7 @@ by this command. Then place point after the first, indented.\n\n"
      '(concat "Insert or possibly skip over a character with a syntax-class of \"paired delimiter\"."
               (autopair-document-bindings)))
 
-
+
 ;; monkey-patching: Compatibility with delete-selection-mode and cua-mode
 ;;
 ;; Ideally one would be able to use functions as the value of the
@@ -13377,7 +13381,7 @@ Currently-active file is at the head of the list.")
 
 (defconst python-pdbtrack-track-range 10000
   "Max number of characters from end of buffer to search for stack entry.")
-
+
 ;;;; Inferior mode stuff (following cmuscheme).
 
 (defconst python-compilation-regexp-alist
@@ -13592,12 +13596,12 @@ in a buffer that doesn't have a local value of `python-buffer'."
   (if (local-variable-p 'python-buffer)
       (setq-default python-buffer python-buffer)
     (error "No local value of `python-buffer'")))
-
+
 ;;; Python-el completion and help
 
 (defvar view-return-to-alist)
 (defvar python-imports)			; forward declaration
-
+
 
 ;; Called from `python-mode', this causes a recursive call of the
 ;; mode.  See logic there to break out of the recursion.
@@ -13605,8 +13609,6 @@ in a buffer that doesn't have a local value of `python-buffer'."
 ;; pdb tracking is alert once this file is loaded, but takes no action if
 ;; `python-pdbtrack-do-tracking-p' is nil.
 (add-hook 'comint-output-filter-functions 'python-pdbtrack-track-stack-file)
-
-
 
 (defun python-comint-output-filter-function (string)
   "Watch output for Python prompt and exec next file waiting in queue.
@@ -13810,7 +13812,7 @@ comint believe the user typed this string so that
 (defvar python-imports "None"
   "String of top-level import statements updated by `py-find-imports'.")
 (make-variable-buffer-local 'python-imports)
-
+
 ;;; Python Shell Complete
 ;; Author: Lukasz Pankowski
 
