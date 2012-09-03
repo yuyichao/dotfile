@@ -1,8 +1,7 @@
 ;; Cython mode
 
+(require 'python-mode)
 ;; Load python-mode if available, otherwise use builtin emacs python package
-(when (not (require 'python-mode nil t))
-  (require 'python))
 
 (add-to-list 'auto-mode-alist '("\\.pyx\\'" . cython-mode))
 (add-to-list 'auto-mode-alist '("\\.pxd\\'" . cython-mode))
@@ -34,7 +33,7 @@
 (defvar cython-font-lock-keywords
   `(;; new keywords in Cython language
     (,(regexp-opt '("by" "cdef" "cimport" "cpdef" "ctypedef" "enum" "except?"
-                    "extern" "gil" "include" "nogil" "property" "public"
+                    "extern" "gil" "include" "nogil" "property" "public" "api"
                     "readonly" "struct" "union" "DEF" "IF" "ELIF" "ELSE") 'words)
      1 font-lock-keyword-face)
     ;; C and Python types (highlight as builtins)
