@@ -214,7 +214,7 @@ Default is nil. "
 (defcustom py-outline-mode-keywords
   '("class"    "def"    "elif"    "else"    "except"
     "for"      "if"     "while"   "finally" "try" "ctypedef" "cdef" "cpdef"
-    "with")
+    "with" "enum" "struct" "union" "property")
   "Keywords composing visible heads. "
   :type '(repeat string)
   :group 'python-mode)
@@ -770,7 +770,7 @@ to select the appropriate python interpreter mode for a file.")
 (make-variable-buffer-local 'py-split-windows-on-execute-function)
 
 (defcustom py-hide-show-keywords
-  '("class"    "def"    "elif"    "else"    "except"
+  '("class"    "def"    "elif"    "else"    "except" "enum" "property" "struct" "union"
     "for"      "if"     "while"   "finally" "try" "ctypedef" "cdef" "cpdef"
     "with")
   "Keywords composing visible heads.
@@ -2175,7 +2175,7 @@ Inludes Python shell-prompt in order to stop further searches. ")
 (defconst py-assignment-re "\\<\\w+\\>[ \t]*\\(=\\|+=\\|*=\\|%=\\|&=\\|^=\\|<<=\\|-=\\|/=\\|**=\\||=\\|>>=\\|//=\\)"
   "If looking at the beginning of an assignment. ")
 
-(defconst py-block-re "[ \t]*\\_<\\(class\\|ctypedef\\|cdef\\|cpdef\\|def\\|for\\|if\\|try\\|while\\|with\\)\\_>[: \n\t]"
+(defconst py-block-re "[ \t]*\\_<\\(class\\|enum\\|property\\|struct\\|union\\|ctypedef\\|cdef\\|cpdef\\|def\\|for\\|if\\|try\\|while\\|with\\)\\_>[: \n\t]"
   "Matches the beginning of a compound statement. ")
 
 (defconst py-minor-block-re "[ \t]*\\_<\\(for\\|if\\|try\\)\\_>[: \n\t]"
@@ -2184,16 +2184,16 @@ Inludes Python shell-prompt in order to stop further searches. ")
 (defconst py-try-block-re "[ \t]*\\_<try\\_>[: \n\t]"
   "Matches the beginning of an `if' or `try' block. ")
 
-(defconst py-class-re "[ \t]*\\_<\\(class\\)\\_>[ \n\t]"
+(defconst py-class-re "[ \t]*\\_<\\(class\\|enum\\|property\\|struct\\|union\\)\\_>[ \n\t]"
   "Matches the beginning of a class definition. ")
 
-(defconst py-def-or-class-re "[ \t]*\\_<\\(def\\|ctypedef\\|cdef\\|cpdef\\|class\\)\\_>[ \n\t]"
+(defconst py-def-or-class-re "[ \t]*\\_<\\(def\\|ctypedef\\|cdef\\|cpdef\\|class\\|enum\\|property\\|struct\\|union\\)\\_>[ \n\t]"
   "Matches the beginning of a class- or functions definition. ")
 
 (defconst py-def-re "[ \t]*\\_<\\(def\\|ctypedef\\|cdef\\|cpdef\\)\\_>[ \n\t]"
   "Matches the beginning of a functions definition. ")
 
-(defconst py-block-or-clause-re "[ \t]*\\_<\\(if\\|else\\|elif\\|while\\|for\\|def\\|ctypedef\\|cdef\\|cpdef\\|class\\|try\\|except\\|finally\\|with\\)\\_>[: \n\t]"
+(defconst py-block-or-clause-re "[ \t]*\\_<\\(if\\|else\\|elif\\|while\\|for\\|def\\|ctypedef\\|cdef\\|cpdef\\|class\\|enum\\|property\\|struct\\|union\\|try\\|except\\|finally\\|with\\)\\_>[: \n\t]"
   "Matches the beginning of a compound statement or it's clause. ")
 
 (defconst py-clause-re "[ \t]*\\_<\\(else\\|elif\\|except\\|finally\\)\\_>[: \n\t]"
@@ -2921,7 +2921,7 @@ of current line."
             (when (= (point) started-from)
               (throw 'done nil)))
           (when (looking-at (rx (0+ space)
-                                (or "def" "ctypedef" "cdef" "cpdef" "class")
+                                (or "def" "ctypedef" "cdef" "cpdef" "class" "enum" "property" "struct" "union")
                                 (1+ space)
                                 (group (1+ (or word (syntax symbol))))))
             (push (match-string 1) accum)
@@ -3252,12 +3252,12 @@ This function does not modify point or mark."
     (list
      `(block-start          . ,(rx symbol-start
                                    (or "def" "ctypedef" "cdef" "cpdef" "class"
-                                       "if" "elif" "else" "try"
+                                       "if" "elif" "else" "try" "enum" "property" "struct" "union"
                                        "except" "finally" "for" "while" "with")
                                    symbol-end))
      `(decorator            . ,(rx line-start (* space) ?@ (any letter ?_)
                                    (* (any word ?_))))
-     `(defun                . ,(rx symbol-start (or "def" "ctypedef" "cdef" "cpdef" "class") symbol-end))
+     `(defun                . ,(rx symbol-start (or "def" "ctypedef" "cdef" "cpdef" "class" "enum" "property" "struct" "union") symbol-end))
      `(symbol-name          . ,(rx (any letter ?_) (* (any word ?_))))
      `(open-paren           . ,(rx (or "{" "[" "(")))
      `(close-paren          . ,(rx (or "}" "]" ")")))
@@ -3484,7 +3484,7 @@ Otherwise inherits from `py-mode-syntax-table'.")
 (and (fboundp 'make-obsolete-variable)
      (make-obsolete-variable 'py-mode-hook 'python-mode-hook nil))
 
-(defvar py-keywords "\\_<\\(ArithmeticError\\|AssertionError\\|AttributeError\\|BaseException\\|BufferError\\|BytesWarning\\|DeprecationWarning\\|EOFError\\|Ellipsis\\|EnvironmentError\\|Exception\\|False\\|FloatingPointError\\|FutureWarning\\|GeneratorExit\\|IOError\\|ImportError\\|ImportWarning\\|IndentationError\\|IndexError\\|KeyError\\|KeyboardInterrupt\\|LookupError\\|MemoryError\\|NameError\\|NoneNotImplementedError\\|NotImplemented\\|OSError\\|OverflowError\\|PendingDeprecationWarning\\|ReferenceError\\|RuntimeError\\|RuntimeWarning\\|StandardError\\|StopIteration\\|SyntaxError\\|SyntaxWarning\\|SystemError\\|SystemExit\\|TabError\\|True\\|TypeError\\|UnboundLocalError\\|UnicodeDecodeError\\|UnicodeEncodeError\\|UnicodeError\\|UnicodeTranslateError\\|UnicodeWarning\\|UserWarning\\|ValueError\\|Warning\\|ZeroDivisionError\\|__debug__\\|__import__\\|__name__\\|abs\\|all\\|and\\|any\\|apply\\|as\\|assert\\|basestring\\|bin\\|bool\\|break\\|buffer\\|bytearray\\|callable\\|chr\\|class\\|classmethod\\|cmp\\|coerce\\|compile\\|complex\\|continue\\|copyright\\|credits\\|def\\|ctypedef\\|cdef\\|cpdef\\|del\\|delattr\\|dict\\|dir\\|divmod\\|elif\\|else\\|enumerate\\|eval\\|except\\|exec\\|execfile\\|exit\\|file\\|filter\\|float\\|for\\|format\\|from\\|getattr\\|global\\|globals\\|hasattr\\|hash\\|help\\|hex\\|id\\|if\\|import\\|in\\|input\\|int\\|intern\\|is\\|isinstance\\|issubclass\\|iter\\|lambda\\|len\\|license\\|list\\|locals\\|long\\|map\\|max\\|memoryview\\|min\\|next\\|not\\|object\\|oct\\|open\\|or\\|ord\\|pass\\|pow\\|print\\|property\\|quit\\|raise\\|range\\|raw_input\\|reduce\\|reload\\|repr\\|return\\|round\\|set\\|setattr\\|slice\\|sorted\\|staticmethod\\|str\\|sum\\|super\\|tuple\\|type\\|unichr\\|unicode\\|vars\\|while\\|with\\|xrange\\|yield\\|zip\\|\\)\\_>"
+(defvar py-keywords "\\_<\\(ArithmeticError\\|AssertionError\\|AttributeError\\|BaseException\\|BufferError\\|BytesWarning\\|DeprecationWarning\\|EOFError\\|Ellipsis\\|EnvironmentError\\|Exception\\|False\\|FloatingPointError\\|FutureWarning\\|GeneratorExit\\|IOError\\|ImportError\\|ImportWarning\\|IndentationError\\|IndexError\\|KeyError\\|KeyboardInterrupt\\|LookupError\\|MemoryError\\|NameError\\|NoneNotImplementedError\\|NotImplemented\\|OSError\\|OverflowError\\|PendingDeprecationWarning\\|ReferenceError\\|RuntimeError\\|RuntimeWarning\\|StandardError\\|StopIteration\\|SyntaxError\\|SyntaxWarning\\|SystemError\\|SystemExit\\|TabError\\|True\\|TypeError\\|UnboundLocalError\\|UnicodeDecodeError\\|UnicodeEncodeError\\|UnicodeError\\|UnicodeTranslateError\\|UnicodeWarning\\|UserWarning\\|ValueError\\|Warning\\|ZeroDivisionError\\|__debug__\\|__import__\\|__name__\\|abs\\|all\\|and\\|any\\|apply\\|as\\|assert\\|basestring\\|bin\\|bool\\|break\\|buffer\\|bytearray\\|callable\\|chr\\|class\\|enum\\|property\\|struct\\|union\\|classmethod\\|cmp\\|coerce\\|compile\\|complex\\|continue\\|copyright\\|credits\\|def\\|ctypedef\\|cdef\\|cpdef\\|del\\|delattr\\|dict\\|dir\\|divmod\\|elif\\|else\\|enumerate\\|eval\\|except\\|exec\\|execfile\\|exit\\|file\\|filter\\|float\\|for\\|format\\|from\\|getattr\\|global\\|globals\\|hasattr\\|hash\\|help\\|hex\\|id\\|if\\|import\\|in\\|input\\|int\\|intern\\|is\\|isinstance\\|issubclass\\|iter\\|lambda\\|len\\|license\\|list\\|locals\\|long\\|map\\|max\\|memoryview\\|min\\|next\\|not\\|object\\|oct\\|open\\|or\\|ord\\|pass\\|pow\\|print\\|property\\|quit\\|raise\\|range\\|raw_input\\|reduce\\|reload\\|repr\\|return\\|round\\|set\\|setattr\\|slice\\|sorted\\|staticmethod\\|str\\|sum\\|super\\|tuple\\|type\\|unichr\\|unicode\\|vars\\|while\\|with\\|xrange\\|yield\\|zip\\|\\)\\_>"
   "Contents like py-fond-lock-keyword")
 
 (defun py-insert-default-shebang ()
@@ -8962,7 +8962,7 @@ named for funcname or define a function funcname."
       (if (and (save-excursion (set-buffer buf)
                                (string= major-mode "python-mode"))
                (or (string-match funcname (buffer-name buf))
-                   (string-match (concat "^\\s-*\\(def\\|ctypedef\\|cdef\\|cpdef\\|class\\)\\s-+"
+                   (string-match (concat "^\\s-*\\(def\\|ctypedef\\|cdef\\|cpdef\\|class\\|enum\\|property\\|struct\\|union\\)\\s-+"
                                          funcname "\\s-*(")
                                  (save-excursion
                                    (set-buffer buf)
@@ -9982,7 +9982,7 @@ of the first definition found."
          (classname (concat "class " name))
          (thisend (or thisend (save-match-data (py-end-of-def-or-class-position))))
          sublist)
-    (while (and (re-search-forward "^[ \t]*\\(?:\\(def\\|ctypedef\\|cdef\\|cpdef\\|class\\)\\)[ \t]+\\(?:\\(\\sw+\\)\\)" (or thisend end) t 1)(not (nth 8 (syntax-ppss))))
+    (while (and (re-search-forward "^[ \t]*\\(?:\\(def\\|ctypedef\\|cdef\\|cpdef\\|class\\|enum\\|property\\|struct\\|union\\)\\)[ \t]+\\(?:\\(\\sw+\\)\\)" (or thisend end) t 1)(not (nth 8 (syntax-ppss))))
       (let* ((pos (match-beginning 0))
              (name (match-string-no-properties 2))
              (classname (concat "class " name))
@@ -10005,7 +10005,7 @@ of the first definition found."
         (end (or end (point-max)))
         index-alist vars thisend sublist classname)
     (goto-char beg)
-    (while (and (re-search-forward "^[ \t]*\\(def\\|ctypedef\\|cdef\\|cpdef\\|class\\)[ \t]+\\(\\sw+\\)" end t 1)(not (nth 8 (syntax-ppss))))
+    (while (and (re-search-forward "^[ \t]*\\(def\\|ctypedef\\|cdef\\|cpdef\\|class\\|enum\\|property\\|struct\\|union\\)[ \t]+\\(\\sw+\\)" end t 1)(not (nth 8 (syntax-ppss))))
       (if (save-match-data (string= "class" (match-string-no-properties 1)))
           (progn
             (setq pos (match-beginning 0)
@@ -10013,7 +10013,7 @@ of the first definition found."
                   classname (concat "class " name)
                   thisend (save-match-data (py-end-of-def-or-class-position))
                   sublist '())
-            (while (and (re-search-forward "^[ \t]*\\(def\\|ctypedef\\|cdef\\|cpdef\\|class\\)[ \t]+\\(\\sw+\\)" (or thisend end) t 1)(not (nth 8 (syntax-ppss))))
+            (while (and (re-search-forward "^[ \t]*\\(def\\|ctypedef\\|cdef\\|cpdef\\|class\\|enum\\|property\\|struct\\|union\\)[ \t]+\\(\\sw+\\)" (or thisend end) t 1)(not (nth 8 (syntax-ppss))))
               (let* ((pos (match-beginning 0))
                      (name (match-string-no-properties 2))
                      (classname (concat "class " name))

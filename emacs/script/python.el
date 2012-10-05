@@ -26,9 +26,9 @@
      ("\\<\\([0-9]\\sw*\\)[[:space:]]*("
       1 font-lock-warning-face)
      ;; Valid hex number (will highlight invalid suffix though)
-     ("\\b0x[0-9a-f]+\\b" . font-lock-string-face)
+     ("\\b0[xX][0-9a-fA-F]+\\b" . font-lock-string-face)
      ;; Invalid hex number
-     ("\\b0x\\(\\w\\|\\.\\)+\\b" . font-lock-warning-face)
+     ("\\b0[xX]\\(\\w\\|\\.\\)+\\b" . font-lock-warning-face)
      ;; Valid floating point number.
      ("\\b[0-9]*\\([0-9]\\.\\|\\.[0-9]\\)[0-9]*\\([eE][-]?[0-9]+\\)?\\b"
       . font-lock-string-face)

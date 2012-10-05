@@ -1,7 +1,7 @@
 (setq tab-width 8)
 (setq-default indent-tabs-mode nil)
 (require 'whitespace)
-(global-whitespace-mode t)
+;; (global-whitespace-mode t)
 ;; (global-whitespace-newline-mode t)
 (setq savehist-file "~/.emacs.d/tmp/savehist")
 (savehist-mode t)
