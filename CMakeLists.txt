@@ -6,3 +6,4 @@ include(DotFiles)
 
 add_subdirectory(git)
 add_subdirectory(emacs)
+add_subdirectory(ipython)
