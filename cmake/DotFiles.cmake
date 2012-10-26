@@ -19,10 +19,13 @@ __dot_files_global_targets()
 function(link_home src dest)
   get_filename_component(fullsrc "${src}" ABSOLUTE)
   __dot_files_get_unique_target_name(link-home targetname)
+  set(fulldest "$ENV{HOME}/${dest}")
+  get_filename_component(dest_path "${fulldest}" PATH)
   add_custom_target(${targetname}
     COMMAND cmake -E cmake_echo_color --green
-    "Link ${fullsrc} to $ENV{HOME}/${dest}"
-    COMMAND ln -sfT "${fullsrc}" "$ENV{HOME}/${dest}"
+    "Link ${fullsrc} to ${fulldest}"
+    COMMAND mkdir -p "${dest_path}"
+    COMMAND ln -sfT "${fullsrc}" "${fulldest}"
     DEPENDS "${src}")
   add_dependencies(link-home ${targetname})
 endfunction()
