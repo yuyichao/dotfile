@@ -1,0 +1,9 @@
+[user]
+	name = Yichao Yu
+	email = yyc1992@gmail.com
+[core]
+        editor = em
+[color]
+        ui = true
+[push]
+	default = current
