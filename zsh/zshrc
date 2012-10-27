@@ -1,0 +1,43 @@
+# Init Zsh
+[[ -o interactive ]] || return
+
+ZSH="${HOME}/.config/zsh"
+source "$ZSH/loader.zsh"
+return
+
+# Set to this to use case-sensitive completion
+CASE_SENSITIVE="true"
+
+# Comment this out to disable weekly auto-update checks
+DISABLE_AUTO_UPDATE="true"
+
+# Uncomment following line if you want to disable autosetting terminal title.
+DISABLE_AUTO_TITLE="true"
+
+# Uncomment following line if you want red dots to be displayed while waiting for completion
+COMPLETION_WAITING_DOTS="true"
+
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git archlinux)
+
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/yuyichao/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+bindkey "${terminfo[khome]}" beginning-of-line
+bindkey "${terminfo[kend]}" end-of-line
+bindkey "${terminfo[kdch1]}" delete-char
+bindkey "\e[A" history-beginning-search-backward
+bindkey "\e[B" history-beginning-search-forward
+bindkey "^P" history-beginning-search-backward
+bindkey "^N" history-beginning-search-forward
+bindkey "^H" backward-kill-line
+bindkey "^Z" undo
+PS1=$'%{\e[01;31m%}%m%{\e[01;35m%}:%{\e[01;34m%}%~\n%{\e[01;32m%}%n%{\e[01;36m%}%# %{\e[00m%}'
+PS2=$'%{\e[01;31m%}> %{\e[00m%}'

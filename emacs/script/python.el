@@ -1,5 +1,5 @@
 (autoload 'python-mode "python-mode.el" "Python mode." t)
-(add-to-list 'auto-mode-alist '("/*.\.py$" . python-mode))
+(add-to-list 'auto-mode-alist '("\\.py$" . python-mode))
 
 (defun load-python-hook()
   (add-hook 'python-mode-hook 'my-py-mode)
