@@ -10,6 +10,7 @@ bindkey "^P" history-beginning-search-backward
 bindkey "^N" history-beginning-search-forward
 bindkey "^H" backward-kill-line
 bindkey "^Z" undo
+bindkey "^[m" copy-prev-shell-word
 
 # bindkey '\ew' kill-region
 # bindkey -s '\el' "ls\n"
