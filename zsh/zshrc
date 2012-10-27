@@ -13,17 +13,7 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git archlinux)
 
-bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 
 # End of lines added by compinstall
-bindkey "${terminfo[khome]}" beginning-of-line
-bindkey "${terminfo[kend]}" end-of-line
-bindkey "${terminfo[kdch1]}" delete-char
-bindkey "\e[A" history-beginning-search-backward
-bindkey "\e[B" history-beginning-search-forward
-bindkey "^P" history-beginning-search-backward
-bindkey "^N" history-beginning-search-forward
-bindkey "^H" backward-kill-line
-bindkey "^Z" undo
