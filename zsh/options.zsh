@@ -15,4 +15,4 @@ setopt emacs
 setopt noautomenu alwaystoend
 
 # interactive
-setopt nobeep nocdablevars
+setopt nobeep nocdablevars long_list_jobs

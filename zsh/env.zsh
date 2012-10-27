@@ -17,3 +17,5 @@ case "$COLORTERM" in
         export TERM=xterm-256color
         ;;
 esac
+
+export PAGER="less -R"
