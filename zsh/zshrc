@@ -39,5 +39,3 @@ bindkey "^P" history-beginning-search-backward
 bindkey "^N" history-beginning-search-forward
 bindkey "^H" backward-kill-line
 bindkey "^Z" undo
-PS1=$'%{\e[01;31m%}%m%{\e[01;35m%}:%{\e[01;34m%}%~\n%{\e[01;32m%}%n%{\e[01;36m%}%# %{\e[00m%}'
-PS2=$'%{\e[01;31m%}> %{\e[00m%}'
