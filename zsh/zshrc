@@ -5,15 +5,6 @@ ZSH="${HOME}/.config/zsh"
 source "$ZSH/loader.zsh"
 return
 
-# Set to this to use case-sensitive completion
-CASE_SENSITIVE="true"
-
-# Comment this out to disable weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-DISABLE_AUTO_TITLE="true"
-
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
@@ -25,10 +16,7 @@ plugins=(git archlinux)
 bindkey -e
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/yuyichao/.zshrc'
 
-autoload -Uz compinit
-compinit
 # End of lines added by compinstall
 bindkey "${terminfo[khome]}" beginning-of-line
 bindkey "${terminfo[kend]}" end-of-line
