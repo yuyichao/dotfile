@@ -1,6 +1,6 @@
 (setq inhibit-startup-screen t)
-;; (setq frame-title-format "%n%F  %b")
-(setq frame-title-format "%b")
+(setq frame-title-format "%b %f")
+;; (setq frame-title-format "%b")
 (setq mouse-yank-at-point -1)
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling

@@ -42,4 +42,4 @@
 (add-to-list 'auto-mode-alist '("\\.pxd\\'" . cython-mode))
 (add-to-list 'auto-mode-alist '("\\.pxi\\'" . cython-mode))
 
-(add-to-list 'auto-mode-alist '("\.fxapi$" . conf-mode))
+(add-to-list 'auto-mode-alist '("\.fxaddon$" . conf-mode))

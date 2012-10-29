@@ -10,7 +10,7 @@
  '(TeX-debug-bad-boxes t)
  '(TeX-debug-warnings t)
  '(column-number-mode t)
- '(global-linum-mode t)
+ ;; '(global-linum-mode t)
  '(global-whitespace-mode t)
  '(pdb-path (quote /usr/lib/python3\.2/pdb\.py))
  '(py-beep-if-tab-change nil)
