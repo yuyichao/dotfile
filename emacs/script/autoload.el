@@ -48,3 +48,5 @@
 (add-to-list 'auto-mode-alist '("\\.zsh$" . shell-script-mode))
 (add-to-list 'auto-mode-alist '("zshrc$" . shell-script-mode))
 (add-to-list 'auto-mode-alist '("bashrc$" . shell-script-mode))
+
+(add-to-list 'auto-mode-alist '("fbtermrc$" . conf-unix-mode))
