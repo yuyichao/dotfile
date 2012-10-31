@@ -44,9 +44,10 @@
 
 (add-to-list 'auto-mode-alist '("\\.fxaddon$" . conf-mode))
 
-(add-to-list 'auto-mode-alist '("\\.sh$" . shell-script-mode))
-(add-to-list 'auto-mode-alist '("\\.zsh$" . shell-script-mode))
-(add-to-list 'auto-mode-alist '("zshrc$" . shell-script-mode))
-(add-to-list 'auto-mode-alist '("bashrc$" . shell-script-mode))
+(add-to-list 'auto-mode-alist '("\\.sh$" . sh-mode))
+(add-to-list 'auto-mode-alist '("\\.zsh$" . sh-mode))
+(add-to-list 'auto-mode-alist '("zshrc$" . sh-mode))
+(add-to-list 'auto-mode-alist '("bashrc$" . sh-mode))
 
 (add-to-list 'auto-mode-alist '("fbtermrc$" . conf-unix-mode))
+(add-to-list 'auto-mode-alist '("muttrc$" . sh-mode))
