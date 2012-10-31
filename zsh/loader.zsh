@@ -9,7 +9,7 @@ source "$ZSH/env.zsh"
 eval $(dircolors)
 zstyle :compinstall filename '${HOME}/.zshrc'
 autoload -Uz compinit
-compinit -i
+compinit -i -d "$ZSH/zcompdump.zsh"
 
 __yyc_zle_init_func_handlers=()
 
