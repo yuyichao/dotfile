@@ -33,3 +33,5 @@ alias afind='ack-grep -il'
 [[ -z $DISPLAY ]] || {
     alias 'ssh=ssh -X'
 }
+
+alias em='emacs'

@@ -10,7 +10,6 @@
  '(TeX-debug-bad-boxes t)
  '(TeX-debug-warnings t)
  '(column-number-mode t)
- ;; '(global-linum-mode t)
  '(global-whitespace-mode t)
  '(pdb-path (quote /usr/lib/python3\.2/pdb\.py))
  '(py-beep-if-tab-change nil)
@@ -25,32 +24,19 @@
  '(show-paren-mode t)
  '(tool-bar-mode nil)
  '(which-function-mode t)
- '(whitespace-style (quote (face tabs spaces trailing space-before-tab
-                                 ;; newline
-                                 indentation
-                                 empty
-                                 space-after-tab
-                                 space-mark tab-mark
-                                 ;; newline-mark
-                                 ))))
+ '(whitespace-style (quote (face tabs spaces trailing space-before-tab indentation empty space-after-tab space-mark tab-mark))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown"
-                        :height 143 :width normal))))
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :height 143 :width normal :slant normal :weight bold))))
  '(font-lock-string-face ((t (:foreground "deeppink"))))
- '(linum ((t (:inherit (shadow default) :background "#00ff87"
-                       :foreground "#0000ff" :weight bold))))
- '(mode-line ((t (:background "#afd7ff" :foreground "#00af00"
-                              :box (:line-width -1 :style released-button)))))
+ '(linum ((t (:inherit (shadow default) :background "#00ff87" :foreground "#0000ff" :weight bold))))
+ '(mode-line ((t (:background "#afd7ff" :foreground "#00af00" :box (:line-width -1 :style released-button)))))
  '(mode-line-buffer-id ((t (:foreground "#0087ff" :underline t :weight bold))))
- '(mode-line-inactive ((t (:inherit mode-line :background "#000000"
-                                    :foreground "brightwhite"
-                                    :box (:line-width -1 :color "grey75")
-                                    :weight light))))
+ '(mode-line-inactive ((t (:inherit mode-line :background "#000000" :foreground "brightwhite" :box (:line-width -1 :color "grey75") :weight light))))
  '(py-builtins-face ((t (:inherit font-lock-builtin-face :foreground "green"))))
  '(whitespace-line ((t (:background "#c0ffff"))))
  '(whitespace-space ((((class color) (background light)) (:foreground "lightgray"))))
