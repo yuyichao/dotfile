@@ -71,3 +71,7 @@
   'exit-minibuffer)
 (eval-after-load "sgml-mode"
   '(define-key html-mode-map (kbd "C-c C-j") 'comment-region))
+(eval-after-load "js-mode"
+  '(define-key js-mode-map (kbd "C-c C-j") 'comment-region))
+(eval-after-load "qml-mode"
+  '(define-key qml-mode-map (kbd "C-c C-j") 'comment-region))

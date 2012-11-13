@@ -1,4 +1,10 @@
 (defvar qml-mode-hook nil)
+(require 'js)
+
+(defvar qml-mode-map
+  (let ((map (make-sparse-keymap)))
+    map)
+  "Keymap used in `qml-mode'.")
 
 (defface qml-preprocessor-kwds-face
   `((t (:foreground "yellow")))
@@ -215,149 +221,10 @@
      )
     ))
 
-
-(defvar qml-mode-syntax-table
-  (let ((qml-mode-syntax-table (make-syntax-table)))
-                                        ; Comment styles are same as C++
-    (modify-syntax-entry ?/ ". 124b" qml-mode-syntax-table)
-    (modify-syntax-entry ?* ". 23" qml-mode-syntax-table)
-    (modify-syntax-entry ?\n "> b" qml-mode-syntax-table)
-    (modify-syntax-entry ?' "\"" qml-mode-syntax-table)
-    qml-mode-syntax-table)
-  "Syntax table for qml-mode")
-
-(defvar qml-indent-width 4)
-
-(defconst qml-block-re "\\(^[ \t]*\\)\\([a-zA-Z0-9]*\\)[ \t]*[a-zA-Z0-9_]*[ \t]*[a-zA-Z0-9_(),: \t]*{")
-
-(defun qml-get-beg-of-block ()
-  (save-excursion
-    (when (re-search-backward qml-block-re nil t)
-      (match-beginning 2)))
-  )
-
-(defun qml-get-end-of-block ()
-  (save-excursion
-    (when (re-search-backward qml-block-re nil t)
-      (goto-char (match-end 0))
-      (backward-char)
-      (condition-case nil
-          (save-restriction
-            (forward-list)
-            (point))
-        (error nil))
-      ))
-  )
-
-(defun qml-indent-line ()
-  (let ((cur (point))
-        (start nil)
-        (end nil)
-        (cur-indent nil)
-        (cur-start nil))
-    (beginning-of-line)
-    (setq cur-start (point))
-    (setq start (qml-get-beg-of-block))
-    (setq end (qml-get-end-of-block))
-    (save-excursion
-      ;;   (goto-char start)
-      ;;   (setq cur-indent (current-indentation))
-      ;;   (goto-char cur)
-      ;;   (setq cur-indent (+ cur-indent default-tab-width)))
-      (if (not (and start end (> cur-start start) (< cur-start end)))
-          (progn
-            ;;(save-excursion
-            (if start
-                (goto-char start))
-            (setq start (qml-get-beg-of-block))
-            (setq end (qml-get-end-of-block))
-            (while (and (not (eq start nil)) (not (eq end nil))
-                        (not (and (> cur-start start) (< cur-start end))))
-              ;;(while (not (and (> cur start) (< cur end)))
-              (goto-char start)
-              (setq start (qml-get-beg-of-block))
-              (setq end (qml-get-end-of-block))
-              )
-            (if (or (eq start nil) (= (point) (point-min)))
-                (progn
-                  (goto-char (point-min))
-                  (when (re-search-forward qml-block-re nil t)
-                    (goto-char (match-beginning 2))
-                    (setq start (point))
-                    (goto-char (match-end 0))
-                    (backward-char)
-                    (condition-case nil
-                        (save-restriction
-                          (forward-list)
-                          (setq end (point))
-                          (setq cur-indent 0))
-                      (error nil)
-                      )
-                    )
-                  ;; (goto-char start)
-                  ;; (setq cur-indent (current-indentation))
-                  )
-              )
-            )
-        ;; (progn
-        ;;   (goto-char start)
-        ;;   (setq cur-indent (current-indentation))
-        ;;   (goto-char cur)
-        ;;   (setq cur-indent (+ cur-indent default-tab-width)))
-        )
-      ;;   )
-      ;; )
-
-      (if (not cur-indent)
-          (progn
-            (goto-char start)
-            (setq cur-indent (current-indentation))
-            (goto-char cur)
-            (if (< (line-number-at-pos cur) (line-number-at-pos end))
-                (setq cur-indent (+ cur-indent qml-indent-width))
-              )
-            (setq cur (+ cur (- cur-indent (current-indentation))))
-            ))
-
-      ;;(message (format "start: %d, end: %d, cur: %d, cur-indent: %d" start end cur cur-indent))
-      )
-    (indent-line-to cur-indent)
-    (if (< (point) cur)
-        (goto-char cur)
-      )
-    ))
-;; (and start
-;;      end
-;;      (> cur start)
-;;      (< cur end))
-;;   )
-;; )
-
-(defun qml-indent-region (start end)
-  (let ((indent-region-function nil))
-    (indent-region start end nil)))
-
-(defun qml-mode()
+(define-derived-mode qml-mode js-mode "QML"
   "Major mode for Qt declarative UI"
-  (interactive)
-  (kill-all-local-variables)
-  (set-syntax-table qml-mode-syntax-table)
   (set (make-local-variable 'font-lock-defaults) '(qml-font-lock-keywords))
-  ;; (set (make-local-variable 'tab-width) qml-indent-width)
   (set (make-local-variable 'indent-tabs-mode) nil)
-  (set (make-local-variable 'indent-line-function) 'qml-indent-line)
-  (set (make-local-variable 'indent-region-function) 'qml-indent-region)
-  ;; (local-set-key (kbd "}") #'(lambda () (interactive) (insert "}") (qml-indent-line)))
-  (local-set-key (kbd "M-;") #'(lambda (arg) (interactive "*P")
-                                 (require 'newcomment)
-                                 (let ((deactivate-mark t)
-                                       (comment-start "//") (comment-end ""))
-                                   (comment-dwim arg)
-                                   (if mark-active
-                                       (deactivate-mark)))))
-  (setq major-mode 'qml-mode)
-  (setq mode-name "qml")
-  (run-hooks 'qml-mode-hook)
   )
 
 (provide 'qml-mode)
