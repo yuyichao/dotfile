@@ -19,3 +19,7 @@ case "$COLORTERM" in
 esac
 
 export PAGER="less -R"
+export LDFLAGS='-Wl,--as-needed'
+export CFLAGS='-Wall -Wextra -Wunused-result -pipe'
+export CXXFLAGS='-Wall -Wextra -Wunused-result -pipe'
+export MAKEFLAGS='-j3'

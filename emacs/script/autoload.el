@@ -23,16 +23,16 @@
 (add-to-list 'auto-mode-alist '("\\.vapi$" . vala-mode))
 (add-to-list 'file-coding-system-alist '("\\.vala$" . utf-8))
 (add-to-list 'file-coding-system-alist '("\\.vapi$" . utf-8))
-(require 'mmm-mode)
+(try-require 'mmm-mode)
 
 (autoload 'cmake-mode "cmake-mode.el" "CMake mode" t)
 (add-to-list 'auto-mode-alist '("CMakeLists\\.txt$" . cmake-mode))
 (add-to-list 'auto-mode-alist '("\\.cmake$" . cmake-mode))
 
-(require 'go-mode-load)
+(try-require 'go-mode-load)
 
-(require 'egg)
-(require 'multi-term)
+(try-require 'egg)
+(try-require 'multi-term)
 
 (autoload 'lua-mode "lua-mode.el" "Lua editing mode." t)
 (add-to-list 'auto-mode-alist '("\\.lua$" . lua-mode))
@@ -43,6 +43,7 @@
 (add-to-list 'auto-mode-alist '("\\.pxi$" . cython-mode))
 
 (add-to-list 'auto-mode-alist '("\\.fxaddon$" . conf-mode))
+(add-to-list 'auto-mode-alist '("\\.desc$" . conf-mode))
 
 (add-to-list 'auto-mode-alist '("\\.sh$" . sh-mode))
 (add-to-list 'auto-mode-alist '("\\.zsh$" . sh-mode))

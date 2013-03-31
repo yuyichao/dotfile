@@ -31,6 +31,7 @@
   (c-toggle-hungry-state t)
   (setq c-basic-offset 4)
   (which-function-mode t)
+  (c-set-offset 'innamespace 0)
   )
 
 (defun my-set-c-highlight()
@@ -87,26 +88,11 @@
      ) t)
   )
 
-;; (require 'cedet)
-
-(defun my-set-c-cedet()
-  (setq semantic-default-submodes '(global-semanticdb-minor-mode
-                                    global-semantic-idle-scheduler-mode
-                                    global-semantic-idle-summary-mode
-                                    global-semantic-idle-completions-mode
-                                    global-semantic-decoration-mode
-                                    global-semantic-highlight-func-mode
-                                    global-semantic-mru-bookmark-mode))
-  (semantic-mode)
-  (semantic-idle-local-symbol-highlight-mode t)
-  )
-
 (defun my-c-mode()
   (interactive)
   (my-set-c-mode-map)
   (my-set-c-style)
   (my-set-c-highlight)
-  ;; (my-set-c-cedet)
   (imenu-add-menubar-index)
   )
 

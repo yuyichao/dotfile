@@ -19,7 +19,7 @@
  '(py-start-run-ipython-shell nil)
  '(py-start-run-py-shell nil)
  '(py-use-number-face-p nil t)
- '(safe-local-variable-values (quote ((js-indent-level . 4) (sh-basic-offset . 4) (sh-indent-comment . t) (py-indent-offset . 4))))
+ '(safe-local-variable-values (quote ((eval progn (c-set-offset (quote innamespace) (quote 0)) (c-set-offset (quote inline-open) (quote 0))) (js2-basic-offset . 4) (js-indent-level . 4) (sh-basic-offset . 4) (sh-indent-comment . t) (py-indent-offset . 4))))
  '(sh-shell-file "/bin/bash")
  '(show-paren-mode t)
  '(tool-bar-mode nil)

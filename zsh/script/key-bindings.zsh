@@ -8,7 +8,7 @@ bindkey "\e[A" history-beginning-search-backward
 bindkey "\e[B" history-beginning-search-forward
 bindkey "^P" history-beginning-search-backward
 bindkey "^N" history-beginning-search-forward
-bindkey "^H" backward-kill-line
+# bindkey "^H" backward-kill-line
 bindkey "^Z" undo
 bindkey "^[m" copy-prev-shell-word
 

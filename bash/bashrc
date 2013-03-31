@@ -84,7 +84,7 @@ fi
 # export d_bin="${HOME}/bin"
 # #export d_knl="${HOME}/kernel"
 # export d_pknl="${d_pro}/kernel"
-# export MAKEFLAGS="-j 3"
+export MAKEFLAGS="-j 3"
 
 # alias "ddoc=d ${d_doc}"
 # alias "dmit=d ${d_mit}"
