@@ -14,7 +14,6 @@ alias l='ls -CF'
 alias '..=cd ..'
 alias -- '-=popd'
 alias "nwem=em -nw"
-alias "pacman=pacman-color"
 alias "pysh=ipython --profile=pysh"
 alias -g '...=../../'
 alias -g '....=../../../'

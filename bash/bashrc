@@ -97,7 +97,6 @@ export MAKEFLAGS="-j 3"
 # alias "dpknl=d ${d_pknl}"
 
 alias "nwemacs=emacs -nw"
-alias "pacman=pacman-color"
 
 [[ -d "$HOME/bin" ]] && ! [[ ":${PATH}:" =~ ":${HOME}/bin:" ]] && {
     export PATH="${PATH}:${HOME}/bin"
