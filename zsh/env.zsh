@@ -1,12 +1,12 @@
 # Init environment variables
 
-[[ -z $DISPLAY ]] && {
-    export LANG=en_US.UTF-8
-} || {
-    export LANG=zh_CN.UTF-8
-}
+# [[ -z $DISPLAY ]] && {
+#     export LANG=en_US.UTF-8
+# } || {
+#     export LANG=zh_CN.UTF-8
+# }
 
-export EDITOR=em
+export EDITOR=emacs
 
 [[ -d "$HOME/bin" ]] && ! [[ ":${PATH}:" =~ ":${HOME}/bin:" ]] && {
     export PATH="${PATH}:${HOME}/bin"
@@ -22,4 +22,4 @@ export PAGER="less -R"
 export LDFLAGS='-Wl,--as-needed'
 export CFLAGS='-Wall -Wextra -Wunused-result -pipe'
 export CXXFLAGS='-Wall -Wextra -Wunused-result -pipe'
-export MAKEFLAGS='-j3'
+export MAKEFLAGS='-j 3 --no-print-directory'
