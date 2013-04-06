@@ -6,13 +6,25 @@
 ;; (global-set-key (quote [67108924]) 'shrink-window-horizontally)
 ;; (global-set-key (quote [67108926]) 'enlarge-window-horizontally)
 
+(if (try-require 'undo-tree)
+    (progn
+      (global-undo-tree-mode)
+      (define-key undo-tree-map (kbd "C-z") 'undo-tree-undo)
+      (define-key undo-tree-map (kbd "C-_") 'undo-tree-redo)
+      (define-key undo-tree-map (kbd "C-/") 'undo-tree-redo)
+      (global-set-key (kbd "C-z") 'undo-tree-undo)
+      (global-set-key (kbd "C-/") 'undo-tree-redo)
+      (global-set-key (kbd "C-_") 'undo-tree-redo))
+  (progn
+    (global-set-key (kbd "C-z") 'undo)))
+
 ;; keys to play arround with:
 ;; C-h; C-_(C-/, C--); C-]
 ;; C-x's :
 ;; C-a; C-h;
 ;; almost all C-c's
-(global-set-key (kbd "C-_") 'backward-kill-line)
-(global-set-key (kbd "C-/") 'backward-kill-line)
+;; (global-set-key (kbd "C-_") 'backward-kill-line)
+(global-set-key (kbd "C-?") 'backward-kill-line)
 (global-set-key (kbd "C-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-q") 'move-beginning-of-line)
 ;; looking for a better one....
@@ -39,7 +51,6 @@
 (global-set-key (kbd "C-x C-k <end>") 'kmacro-edit-macro-repeat)
 (global-set-key (kbd "C-x h <end>") 'view-external-packages)
 (global-set-key (kbd "C-c C-w") 'delete-region)
-(global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "M-j") 'windmove-down)
 (global-set-key (kbd "M-h") 'windmove-left)
 (global-set-key (kbd "M-k") 'windmove-up)
