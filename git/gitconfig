@@ -3,7 +3,7 @@
 	email = yyc1992@gmail.com
 	signingkey = yyc1992@gmail.com
 [core]
-        editor = em
+        editor = emacs
 [color]
         ui = true
 [push]
