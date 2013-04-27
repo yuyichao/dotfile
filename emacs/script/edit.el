@@ -3,5 +3,6 @@
 (require 'whitespace)
 ;; (global-whitespace-mode t)
 ;; (global-whitespace-newline-mode t)
+(setq history-length t)
 (setq savehist-file "~/.emacs.d/tmp/savehist")
 (savehist-mode t)
