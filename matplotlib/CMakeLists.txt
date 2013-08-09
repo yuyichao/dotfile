@@ -1,1 +1,1 @@
-link_home(matplotlibrc .matplotlib/matplotlibrc)
+link_home(matplotlibrc .config/matplotlib/matplotlibrc)
