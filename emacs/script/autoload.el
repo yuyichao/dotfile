@@ -29,6 +29,8 @@
 (add-to-list 'auto-mode-alist '("CMakeLists\\.txt$" . cmake-mode))
 (add-to-list 'auto-mode-alist '("\\.cmake$" . cmake-mode))
 
+(autoload 'cmake-edit-mode "cmake-edit-mode.el" "CMake Edit mode" t)
+
 (try-require 'go-mode-load)
 
 (try-require 'egg)
@@ -62,3 +64,26 @@
       (setq mweb-filename-extensions
             '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
       (multi-web-global-mode 1)))
+
+(defun load-cmake-hook()
+  (add-hook 'cmake-mode-hook 'my-cmake-mode))
+(eval-after-load "cmake-mode" '(load-cmake-hook))
+(autoload 'andersl-cmake-font-lock-activate "andersl-cmake-font-lock" nil t)
+
+(defun my-cmake-mode()
+  (interactive)
+  (andersl-cmake-font-lock-activate)
+  (font-lock-add-keywords
+   nil
+   '(
+     ;; options
+     ("\\<\\([_a-zA-Z]\\sw*:\\)" 1 font-lock-keyword-face)
+     ("\\<\\([_a-zA-Z]\\sw*\\[\\]:\\)" 1 font-lock-constant-face)
+     ("\\<[Mm][Aa][Cc][Rr][Oo][[:space:]]*([[:space:]]*\\([^[:space:])]*\\)" 1
+      font-lock-member-face)
+     ("\\<[Ff][Uu][Nn][Cc][Tt][Ii][Oo][Nn][[:space:]]*([[:space:]]*\\([^[:space:])]*\\)" 1 font-lock-function-call-face)
+     ("\\<[Ss][Ee][Tt][[:space:]]*([[:space:]]*\\([^[:space:])]*\\)" 1 font-lock-variable-name-face)
+     ("\\<[Ff][Oo][Rr][Ee][Aa][Cc][Hh][[:space:]]*([[:space:]]*\\([^[:space:])]*\\)" 1 font-lock-variable-name-face)
+     ("\\<[Ii][Nn][Cc][Ll][Uu][Dd][Ee][[:space:]]*([[:space:]]*\\([^[:space:])]*\\)" 1 font-lock-constant-face)
+     ;; ("\\<\\${\\(.*\\)}" 1 font-lock-variable-name-face)
+     ) t))
