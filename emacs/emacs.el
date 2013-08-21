@@ -36,7 +36,7 @@
  '(linum ((t (:inherit (shadow default) :background "#00ff87" :foreground "#0000ff" :weight bold))))
  '(mode-line ((t (:background "#afd7ff" :foreground "#00af00" :box (:line-width -1 :style released-button)))))
  '(mode-line-buffer-id ((t (:foreground "#0087ff" :underline t :weight bold))))
- '(mode-line-inactive ((t (:inherit mode-line :background "#000000" :foreground "brightwhite" :box (:line-width -1 :color "grey75") :weight light))))
+ '(mode-line-inactive ((t (:inherit mode-line :background "#000000" :foreground "white" :box (:line-width -1 :color "grey75") :weight light))))
  '(py-builtins-face ((t (:inherit font-lock-builtin-face :foreground "green"))))
  '(whitespace-line ((t (:background "#c0ffff"))))
  '(whitespace-space ((((class color) (background light)) (:foreground "lightgray"))))
