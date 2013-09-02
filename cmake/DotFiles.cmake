@@ -10,7 +10,12 @@ function(__dot_files_get_unique_target_name _name _unique_name)
 endfunction()
 
 function(__dot_files_global_targets)
+  set(__target_added)
   get_property(__target_added GLOBAL PROPERTY "__DOT_FILES_TARGETS_ADDED")
+  if(__target_added)
+    return()
+  endif()
+  add_custom_target(check-link)
   add_custom_target(link-home)
   set_property(GLOBAL PROPERTY "__DOT_FILES_TARGETS_ADDED" 1)
 endfunction()
@@ -28,4 +33,8 @@ function(link_home src dest)
     COMMAND ln -sfT "${fullsrc}" "${fulldest}"
     DEPENDS "${src}")
   add_dependencies(link-home ${targetname})
+  add_custom_target(${targetname}.check
+    COMMAND test -L "${fulldest}" || cmake -E cmake_echo_color --red
+    "${fulldest} is not a symlink")
+  add_dependencies(check-link ${targetname}.check)
 endfunction()
