@@ -23,6 +23,7 @@
  '(sh-shell-file "/bin/bash")
  '(show-paren-mode t)
  '(tool-bar-mode nil)
+ '(vc-follow-symlinks t)
  '(which-function-mode t)
  '(whitespace-style (quote (face tabs spaces trailing space-before-tab indentation empty space-after-tab space-mark tab-mark))))
 
