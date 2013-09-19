@@ -34,3 +34,4 @@ alias afind='ack-grep -il'
 }
 
 alias em='emacs'
+alias 'sudo=sudo '
