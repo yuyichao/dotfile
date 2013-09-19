@@ -18,6 +18,7 @@ case "$COLORTERM" in
         ;;
 esac
 
+export LESS=-R
 export PAGER="less -R"
 export LDFLAGS='-Wl,--as-needed'
 export CFLAGS='-Wall -Wextra -Wunused-result -pipe'
