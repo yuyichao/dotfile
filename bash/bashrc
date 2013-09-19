@@ -44,11 +44,12 @@ case ${COLORTERM} in
         ;;
 esac
 
-export EDITOR=em
+export EDITOR=emacs
 
-export XMODIFIERS=@im=fcitx
-export GTK_IM_MODULE=fcitx
-export QT_IM_MODULE=fcitx
+export LESS=-R
+# export XMODIFIERS=@im=fcitx
+# export GTK_IM_MODULE=fcitx
+# export QT_IM_MODULE=fcitx
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -105,3 +106,5 @@ alias "nwemacs=emacs -nw"
 [[ -z $DISPLAY ]] || {
     alias 'ssh=ssh -X'
 }
+
+alias 'sudo=sudo '
