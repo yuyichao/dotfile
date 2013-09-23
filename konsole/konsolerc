@@ -10,6 +10,10 @@ DefaultProfile=Shell.profile
 [Favorite Profiles]
 Favorites=Shell.profile
 
+[KFileDialog Settings]
+Height 1200=630
+Width 1920=1008
+
 [KonsoleWindow]
 ShowMenuBarByDefault=false
 
@@ -19,7 +23,7 @@ Height 1440=1441
 Height 600=601
 Height 768=769
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAAAAA7wAAASGAAAABAAAAAQAAAAIAAAACPwAAAAA
+State=AAAA/wAAAAD9AAAAAAAAA7wAAAJAAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 Width 1024=956
 Width 1920=956
