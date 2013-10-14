@@ -8,6 +8,9 @@
   (add-hook 'c++-mode-hook 'my-c-mode)
   )
 
+(setq c-macro-names-with-semicolon
+      '("Q_OBJECT" "Q_PROPERTY" "Q_DECLARE" "Q_ENUMS" "Q_CLASSINFO"
+        "Q_PLUGIN_METADATA"))
 (eval-after-load "cc-mode" '(load-cc-hook))
 
 (defun my-set-c-mode-map()
@@ -32,6 +35,11 @@
   (setq c-basic-offset 4)
   (which-function-mode t)
   (c-set-offset 'innamespace 0)
+  (c-set-offset 'inextern-lang 0)
+  (c-set-offset 'case-label 0)
+  (c-set-offset 'label 0)
+  (c-set-offset 'inline-open 0)
+  (c-set-offset 'access-label '-)
   )
 
 (defun my-set-c-highlight()
@@ -98,10 +106,10 @@
 
 (if (try-require 'xcscope)
     (progn
-     (add-hook 'cscope-list-entry-hook 'my-cscope-mode)
      (defun my-cscope-mode()
        (interactive)
        (define-key cscope-list-entry-keymap (kbd "<return>")
          'cscope-select-entry-other-window)
        (define-key cscope-list-entry-keymap (kbd "C-m")
-         'cscope-select-entry-other-window))))
+         'cscope-select-entry-other-window))
+     (add-hook 'cscope-list-entry-hook 'my-cscope-mode)))
