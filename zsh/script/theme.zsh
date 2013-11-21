@@ -10,12 +10,12 @@ set_term_title() {
     case $TERM in
         sun-cmd)
             print -n "\e]l"
-            print -nR "$1"
+            print -nR "$1" | tr '\n' ' ' | sed -e 's/[[:space:]]\+/ /g'
             print -n "\e\\"
             ;;
         *xterm*|rxvt|dtterm|kterm|Eterm)
             print -n "\e]2;"
-            print -nR "$1"
+            print -nR "$1" | tr '\n' ' ' | sed -e 's/[[:space:]]\+/ /g'
             print -n "\a"
             ;;
     esac
