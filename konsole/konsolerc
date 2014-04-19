@@ -18,17 +18,23 @@ Width 1920=1008
 ShowMenuBarByDefault=false
 
 [MainWindow]
+Height 1024=1025
 Height 1200=1201
 Height 1440=1441
+Height 1800=1801
+Height 500=500
 Height 600=601
 Height 768=769
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAAAAA8AAAASNAAAABAAAAAQAAAAIAAAACPwAAAAA
+State=AAAA/wAAAAD9AAAAAAAABjwAAAaqAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
 Width 1024=956
+Width 1280=960
 Width 1920=960
 Width 2560=1276
+Width 3200=1596
 Width 800=956
+Width 900=653
 
 [Notification Messages]
 CloseAllTabs=true
