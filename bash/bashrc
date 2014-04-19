@@ -103,6 +103,14 @@ alias "nwemacs=emacs -nw"
     export PATH="${PATH}:${HOME}/bin"
 }
 
+[[ -d "/usr/lib/ccache/bin" ]] && \
+    ! [[ ":${PATH}:" =~ ":/usr/lib/ccache/bin:" ]] && {
+    export PATH="${PATH}:/usr/lib/ccache/bin"
+}
+[[ -f /usr/lib/ccache/bin/cc ]] && export CC=/usr/lib/ccache/bin/cc
+[[ -f /usr/lib/ccache/bin/c++ ]] && export CXX=/usr/lib/ccache/bin/c++
+# [[ -f /usr/lib/ccache/bin/c++ ]] && export CPP=/usr/lib/ccache/bin/c++
+
 [[ -z $DISPLAY ]] || {
     alias 'ssh=ssh -X'
 }
