@@ -1,5 +1,6 @@
 (autoload 'c-mode "cc-mode.el" "C mode." t)
 (autoload 'c++-mode "cc-mode.el" "C++ mode." t)
+(add-to-list 'auto-mode-alist '("\\.cl$" . c-mode))
 (add-to-list 'auto-mode-alist '("\\.h$" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.cpp$" . c++-mode))
 
@@ -113,3 +114,10 @@
        (define-key cscope-list-entry-keymap (kbd "C-m")
          'cscope-select-entry-other-window))
      (add-hook 'cscope-list-entry-hook 'my-cscope-mode)))
+
+(if (try-require 'doxymacs)
+    (progn
+      (defun my-doxymacs-font-lock ()
+        (font-lock-add-keywords nil doxymacs-doxygen-keywords))
+      (add-hook 'c-mode-common-hook 'doxymacs-mode)
+      (add-hook 'c-mode-common-hook 'my-doxymacs-font-lock)))

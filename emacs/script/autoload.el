@@ -46,6 +46,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.fxaddon$" . conf-mode))
 (add-to-list 'auto-mode-alist '("\\.desc$" . conf-mode))
+(add-to-list 'auto-mode-alist '("Doxyfile" . conf-mode))
 
 (add-to-list 'auto-mode-alist '("\\.sh$" . sh-mode))
 (add-to-list 'auto-mode-alist '("\\.zsh$" . sh-mode))
