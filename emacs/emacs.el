@@ -10,6 +10,7 @@
  '(TeX-debug-bad-boxes t)
  '(TeX-debug-warnings t)
  '(auto-save-list-file-prefix "~/.emacs.d/auto-save-list/saves-")
+ '(c-doc-comment-style (quote ((java-mode . javadoc) (pike-mode . autodoc))))
  '(column-number-mode t)
  '(global-whitespace-mode t)
  '(history-length t)
@@ -21,7 +22,7 @@
  '(py-start-run-ipython-shell nil)
  '(py-start-run-py-shell nil)
  '(py-use-number-face-p nil t)
- '(safe-local-variable-values (quote ((eval progn (c-set-offset (quote innamespace) (quote 0)) (c-set-offset (quote inline-open) (quote 0))) (js2-basic-offset . 4) (js-indent-level . 4) (sh-basic-offset . 4) (sh-indent-comment . t) (py-indent-offset . 4))))
+ '(safe-local-variable-values (quote ((c-file-offsets (innamespace . 0) (inline-open . 0) (case-label . +)) (eval progn (c-set-offset (quote innamespace) (quote 0)) (c-set-offset (quote inline-open) (quote 0))) (js2-basic-offset . 4) (js-indent-level . 4) (sh-basic-offset . 4) (sh-indent-comment . t) (py-indent-offset . 4))))
  '(savehist-file "~/.emacs.d/savehist")
  '(savehist-mode t)
  '(sh-shell-file "/bin/bash")
@@ -37,7 +38,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :height 143 :width normal :slant normal :weight bold))))
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :height 233 :width normal :slant normal :weight bold))))
  '(font-lock-string-face ((t (:foreground "deeppink"))))
  '(linum ((t (:inherit (shadow default) :background "#00ff87" :foreground "#0000ff" :weight bold))))
  '(mode-line ((t (:background "#afd7ff" :foreground "#00af00" :box (:line-width -1 :style released-button)))))
