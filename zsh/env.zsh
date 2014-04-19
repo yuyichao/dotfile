@@ -21,6 +21,6 @@ esac
 export LESS=-R
 export PAGER="less -R"
 export LDFLAGS='-Wl,--as-needed'
-export CFLAGS='-Wall -Wextra -Wunused-result -pipe'
-export CXXFLAGS='-Wall -Wextra -Wunused-result -pipe'
+export CFLAGS='-g -Wall -Wextra -Wunused-result -pipe'
+export CXXFLAGS='-g -Wall -Wextra -Wunused-result -pipe'
 export MAKEFLAGS='-j 3 --no-print-directory'
