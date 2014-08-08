@@ -18,3 +18,5 @@
 	trustExitCode = true
 [merge]
 	tool = ediff
+[remote-hg]
+	hg-git-compat = true
