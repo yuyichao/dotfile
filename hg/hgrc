@@ -1,2 +1,7 @@
-# [extensions]
-# hggit=
+[ui]
+username = Yichao Yu <yyc1992@gmail.com>
+
+[extensions]
+strip =
+progress =
+# hggit =
