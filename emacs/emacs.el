@@ -30,6 +30,9 @@
  '(tab-width 8)
  '(tool-bar-mode nil)
  '(vc-follow-symlinks t)
+ '(verilog-align-ifelse t)
+ '(verilog-auto-lineup (quote ignore))
+ '(verilog-auto-newline nil)
  '(which-function-mode t)
  '(whitespace-style (quote (face tabs spaces trailing space-before-tab indentation empty space-after-tab space-mark tab-mark))))
 

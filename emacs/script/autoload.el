@@ -25,6 +25,8 @@
 (add-to-list 'file-coding-system-alist '("\\.vapi$" . utf-8))
 (try-require 'mmm-mode)
 
+;; TODO
+(add-to-list 'load-path "/usr/share/cmake-3.0/editors/emacs")
 (autoload 'cmake-mode "cmake-mode.el" "CMake mode" t)
 (add-to-list 'auto-mode-alist '("CMakeLists\\.txt$" . cmake-mode))
 (add-to-list 'auto-mode-alist '("\\.cmake$" . cmake-mode))
