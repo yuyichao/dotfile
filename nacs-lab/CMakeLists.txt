@@ -1,1 +1,1 @@
-link_home(planahead_env.sh .config/nacs-lab/planahead_env.sh)
+link_home(xilinx_env.sh .config/nacs-lab/xilinx_env.sh)
