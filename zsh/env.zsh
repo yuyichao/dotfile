@@ -23,4 +23,4 @@ export PAGER="less -R"
 export LDFLAGS='-Wl,--as-needed'
 export CFLAGS='-g -Wall -Wextra -Wunused-result -pipe'
 export CXXFLAGS='-g -Wall -Wextra -Wunused-result -pipe'
-export MAKEFLAGS="-j 7 --no-print-directory"
+export MAKEFLAGS="-j7 -l8 --no-print-directory"
