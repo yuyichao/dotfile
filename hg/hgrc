@@ -4,4 +4,5 @@ username = Yichao Yu <yyc1992@gmail.com>
 [extensions]
 strip =
 progress =
+purge =
 # hggit =
