@@ -1,22 +1,30 @@
 [user]
-	name = Yichao Yu
-	email = yyc1992@gmail.com
-	signingkey = yyc1992@gmail.com
+        name = Yichao Yu
+        email = yyc1992@gmail.com
+        signingkey = yyc1992@gmail.com
 [core]
         editor = emacs
 [color]
         ui = true
 [push]
-	default = current
+        default = current
 [difftool "ediff"]
-	cmd = ediff ${LOCAL} ${REMOTE} ${MERGED}
+        cmd = ediff ${LOCAL} ${REMOTE} ${MERGED}
 [diff]
-	tool = ediff
-	guitool = ediff
+        tool = ediff
+        guitool = ediff
 [mergetool "ediff"]
-	cmd = ediff ${LOCAL} ${REMOTE} ${MERGED} ${BASE}
-	trustExitCode = true
+        cmd = ediff ${LOCAL} ${REMOTE} ${MERGED} ${BASE}
+        trustExitCode = true
 [merge]
-	tool = ediff
+        tool = ediff
 [remote-hg]
-	hg-git-compat = true
+        hg-git-compat = true
+[url "git://anongit.kde.org/"]
+        insteadOf = kde:
+[url "git@git.kde.org:"]
+        pushInsteadOf = kde:
+[url "git://github.com/"]
+        insteadOf = github:
+[url "git@github.com:"]
+        pushInsteadOf = github:
