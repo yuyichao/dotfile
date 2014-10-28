@@ -1,5 +1,5 @@
-(autoload 'c-mode "cc-mode.el" "C mode." t)
-(autoload 'c++-mode "cc-mode.el" "C++ mode." t)
+;; (autoload 'c-mode "cc-mode.el" "C mode." t)
+;; (autoload 'c++-mode "cc-mode.el" "C++ mode." t)
 (add-to-list 'auto-mode-alist '("\\.cl$" . c-mode))
 (add-to-list 'auto-mode-alist '("\\.h$" . c++-mode))
 (add-to-list 'auto-mode-alist '("\\.cpp$" . c++-mode))
