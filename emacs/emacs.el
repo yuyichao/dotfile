@@ -11,6 +11,7 @@
  '(TeX-debug-warnings t)
  '(auto-save-list-file-prefix "~/.emacs.d/auto-save-list/saves-")
  '(c-doc-comment-style (quote ((java-mode . javadoc) (pike-mode . autodoc))))
+ '(c-label-minimum-indentation (quote set-from-style))
  '(column-number-mode t)
  '(global-whitespace-mode t)
  '(history-length t)
@@ -22,7 +23,24 @@
  '(py-start-run-ipython-shell nil)
  '(py-start-run-py-shell nil)
  '(py-use-number-face-p nil t)
- '(safe-local-variable-values (quote ((c-file-offsets (innamespace . 0) (inline-open . 0) (case-label . +)) (eval progn (c-set-offset (quote innamespace) (quote 0)) (c-set-offset (quote inline-open) (quote 0))) (js2-basic-offset . 4) (js-indent-level . 4) (sh-basic-offset . 4) (sh-indent-comment . t) (py-indent-offset . 4))))
+ '(safe-local-variable-values
+   (quote
+    ((c-file-offsets
+      (innamespace . 0)
+      (inline-open . 0)
+      (case-label . +))
+     (eval progn
+           (c-set-offset
+            (quote innamespace)
+            (quote 0))
+           (c-set-offset
+            (quote inline-open)
+            (quote 0)))
+     (js2-basic-offset . 4)
+     (js-indent-level . 4)
+     (sh-basic-offset . 4)
+     (sh-indent-comment . t)
+     (py-indent-offset . 4))))
  '(savehist-file "~/.emacs.d/savehist")
  '(savehist-mode t)
  '(sh-shell-file "/bin/bash")
@@ -34,7 +52,9 @@
  '(verilog-auto-lineup (quote ignore))
  '(verilog-auto-newline nil)
  '(which-function-mode t)
- '(whitespace-style (quote (face tabs spaces trailing space-before-tab indentation empty space-after-tab space-mark tab-mark))))
+ '(whitespace-style
+   (quote
+    (face tabs spaces trailing space-before-tab indentation empty space-after-tab space-mark tab-mark))))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

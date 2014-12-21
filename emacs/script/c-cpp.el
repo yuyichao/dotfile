@@ -107,13 +107,13 @@
 
 (if (try-require 'xcscope)
     (progn
-     (defun my-cscope-mode()
-       (interactive)
-       (define-key cscope-list-entry-keymap (kbd "<return>")
-         'cscope-select-entry-other-window)
-       (define-key cscope-list-entry-keymap (kbd "C-m")
-         'cscope-select-entry-other-window))
-     (add-hook 'cscope-list-entry-hook 'my-cscope-mode)))
+      (defun my-cscope-mode()
+        (interactive)
+        (define-key cscope-list-entry-keymap (kbd "<return>")
+          'cscope-select-entry-other-window)
+        (define-key cscope-list-entry-keymap (kbd "C-m")
+          'cscope-select-entry-other-window))
+      (add-hook 'cscope-list-entry-hook 'my-cscope-mode)))
 
 (if (try-require 'doxymacs)
     (progn
