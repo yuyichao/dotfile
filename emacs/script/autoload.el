@@ -56,10 +56,6 @@
 (add-to-list 'auto-mode-alist '("zshrc$" . sh-mode))
 (add-to-list 'auto-mode-alist '("bashrc$" . sh-mode))
 
-(autoload 'julia-mode "julia-mode.el"
-  "Major mode for editing Julia source files" t)
-(add-to-list 'auto-mode-alist '("\\.jl$" . julia-mode))
-
 (add-to-list 'auto-mode-alist '("fbtermrc$" . conf-unix-mode))
 (add-to-list 'auto-mode-alist '("muttrc$" . sh-mode))
 

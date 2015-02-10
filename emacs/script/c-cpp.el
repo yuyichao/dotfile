@@ -97,13 +97,17 @@
      ) t)
   )
 
+(defun my-c-lineup-topmost-intro-cont (orig-func langelem)
+  nil)
+
 (defun my-c-mode()
   (interactive)
   (my-set-c-mode-map)
   (my-set-c-style)
   (my-set-c-highlight)
   (imenu-add-menubar-index)
-  )
+  (advice-add 'c-lineup-topmost-intro-cont :around
+              #'my-c-lineup-topmost-intro-cont))
 
 (if (try-require 'xcscope)
     (progn
