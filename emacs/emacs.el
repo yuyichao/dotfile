@@ -51,6 +51,7 @@
  '(verilog-align-ifelse t)
  '(verilog-auto-lineup (quote ignore))
  '(verilog-auto-newline nil)
+ '(verilog-minimum-comment-distance 0)
  '(which-function-mode t)
  '(whitespace-style
    (quote

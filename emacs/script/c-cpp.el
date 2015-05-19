@@ -47,6 +47,9 @@
   (font-lock-add-keywords
    nil
    '(
+     ;; add the new C++11 keywords
+     ("\\<\\(nullptr\\)\\>" . font-lock-constant-face)
+     ("\\<\\(alignof\\|alignas\\|constexpr\\|decltype\\|noexcept\\|static_assert\\|thread_local\\|override\\|final\\)\\>" . font-lock-keyword-face)
      ;; Calling macros
      ("\\<\\([_A-Z][_0-9A-Z]*\\)[[:space:]]*(" 1 font-lock-macro-call-face)
      ;; Calling functions
