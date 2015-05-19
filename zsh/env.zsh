@@ -18,9 +18,11 @@ case "$COLORTERM" in
         ;;
 esac
 
+_cwflags='-Wunused-result -Wno-sign-compare -Wno-unused-parameter'
+
 export LESS=-R
 export PAGER="less -R"
 export LDFLAGS='-Wl,--as-needed'
-export CFLAGS='-g -Wall -Wextra -Wunused-result -pipe'
-export CXXFLAGS='-g -Wall -Wextra -Wunused-result -pipe'
+export CFLAGS="-g -Wall -Wextra ${_cwflags} -pipe"
+export CXXFLAGS="-g -Wall -Wextra ${_cwflags} -pipe"
 export MAKEFLAGS="-j7 -l8 --no-print-directory"
