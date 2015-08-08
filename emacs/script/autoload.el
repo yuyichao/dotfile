@@ -95,3 +95,7 @@
 (add-to-list 'auto-mode-alist '("\\.m?$" . octave-mode))
 (setq octave-continuation-string "...")
 (setq octave-comment-start "%")
+
+(autoload 'llvm-mode "llvm-mode.el"
+  "Major mode for editing LLVM IR files" t)
+(add-to-list 'auto-mode-alist '("\\.ll$" . llvm-mode))
