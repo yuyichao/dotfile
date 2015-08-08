@@ -18,7 +18,7 @@ case "$COLORTERM" in
         ;;
 esac
 
-_cwflags='-Wunused-result -Wno-sign-compare -Wno-unused-parameter'
+_cwflags='-Wunused-result -Wno-sign-compare -Wno-unused-parameter -Wno-clobbered'
 
 export LESS=-R
 export PAGER="less -R"
