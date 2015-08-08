@@ -1,4 +1,4 @@
-link_home(YYC.colorscheme .kde4/share/apps/konsole/YYC.colorscheme)
-link_home(Shell.profile .kde4/share/apps/konsole/Shell.profile)
-link_home(linux.keytab .kde4/share/apps/konsole/linux.keytab)
-link_home(konsolerc .kde4/share/config/konsolerc)
+link_home(YYC.colorscheme .local/share/konsole/YYC.colorscheme)
+link_home(Shell.profile .local/share/konsole/Shell.profile)
+link_home(linux.keytab .local/share/konsole/linux.keytab)
+link_home(konsolerc .config/konsolerc)
