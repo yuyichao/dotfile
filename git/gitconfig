@@ -4,6 +4,7 @@
         signingkey = yyc1992@gmail.com
 [core]
         editor = emacs
+        excludesfile = /home/yuyichao/.config/git/gitignore
 [color]
         ui = true
 [push]
