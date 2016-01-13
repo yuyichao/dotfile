@@ -99,3 +99,7 @@
 (autoload 'llvm-mode "llvm-mode.el"
   "Major mode for editing LLVM IR files" t)
 (add-to-list 'auto-mode-alist '("\\.ll$" . llvm-mode))
+
+(autoload 'yaml-mode "yaml-mode.el"
+  "Major mode for editing YAML files" t)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
