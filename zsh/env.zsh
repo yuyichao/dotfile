@@ -22,7 +22,8 @@ _cwflags='-Wunused-result -Wno-sign-compare -Wno-unused-parameter -Wno-clobbered
 
 export LESS=-R
 export PAGER="less -R"
-export LDFLAGS='-Wl,--as-needed'
+export LDFLAGS=''
+# export LDFLAGS='-Wl,--as-needed'
 export CFLAGS="-g -Wall -Wextra ${_cwflags} -pipe"
 export CXXFLAGS="-g -Wall -Wextra ${_cwflags} -pipe"
 export MAKEFLAGS="-j7 -l8 --no-print-directory"
