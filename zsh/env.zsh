@@ -19,11 +19,13 @@ case "$COLORTERM" in
 esac
 
 _cwflags='-Wunused-result -Wno-sign-compare -Wno-unused-parameter -Wno-clobbered'
+_cwflags="${_cwflags} -Wno-unknown-warning-option"
+_cwflags="${_cwflags} -funwind-tables -fasynchronous-unwind-tables"
 
 export LESS=-R
 export PAGER="less -R"
 export LDFLAGS=''
-# export LDFLAGS='-Wl,--as-needed'
+export LDFLAGS='-Wl,--as-needed'
 export CFLAGS="-g -Wall -Wextra ${_cwflags} -pipe"
 export CXXFLAGS="-g -Wall -Wextra ${_cwflags} -pipe"
 export MAKEFLAGS="-j7 -l8 --no-print-directory"
