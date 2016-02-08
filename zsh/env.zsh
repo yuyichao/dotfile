@@ -19,8 +19,7 @@ case "$COLORTERM" in
 esac
 
 _cwflags='-Wunused-result -Wno-sign-compare -Wno-unused-parameter -Wno-clobbered'
-_cwflags="${_cwflags} -Wno-unknown-warning-option"
-_cwflags="${_cwflags} -funwind-tables -fasynchronous-unwind-tables"
+_cwflags="${_cwflags} -Wno-unknown-warning-option -fasynchronous-unwind-tables"
 
 export LESS=-R
 export PAGER="less -R"
