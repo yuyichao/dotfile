@@ -1,6 +1,10 @@
 # Init Zsh
 [[ -o interactive ]] || return
 
+if [[ $TERM = vt220 ]]; then
+    TERM=xterm-256color
+fi
+
 ZSH="${HOME}/.config/zsh"
 source "$ZSH/loader.zsh"
 return

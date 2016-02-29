@@ -28,3 +28,8 @@ export LDFLAGS='-Wl,--as-needed'
 export CFLAGS="-g -Wall -Wextra ${_cwflags} -pipe"
 export CXXFLAGS="-g -Wall -Wextra ${_cwflags} -pipe"
 export MAKEFLAGS="-j7 -l8 --no-print-directory"
+
+if [[ $(gcc -dumpmachine 2> /dev/null) =~ ^i686 ]]; then
+    CFLAGS+=' -march=pentium4'
+    CXXFLAGS+=' -march=pentium4'
+fi
