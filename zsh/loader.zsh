@@ -6,7 +6,9 @@ source "$ZSH/options.zsh"
 # Set environment variables
 source "$ZSH/env.zsh"
 
-eval $(dircolors)
+if which dircolors &> /dev/null; then
+   eval $(dircolors)
+fi
 zstyle :compinstall filename '${HOME}/.zshrc'
 autoload -Uz compinit
 compinit -i -d "$ZSH/zcompdump.zsh"

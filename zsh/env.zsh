@@ -23,8 +23,11 @@ _cwflags="${_cwflags} -Wno-unknown-warning-option -fasynchronous-unwind-tables"
 
 export LESS=-R
 export PAGER="less -R"
-export LDFLAGS=''
-export LDFLAGS='-Wl,--as-needed'
+if (which uname; [[ $(uname) = Linux ]]) &> /dev/null; then
+    export LDFLAGS='-Wl,--as-needed'
+else
+    export LDFLAGS=''
+fi
 export CFLAGS="-g -Wall -Wextra ${_cwflags} -pipe"
 export CXXFLAGS="-g -Wall -Wextra ${_cwflags} -pipe"
 export MAKEFLAGS="-j7 -l8 --no-print-directory"

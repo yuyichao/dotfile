@@ -1,6 +1,10 @@
-alias ls='ls --color=auto'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
+if (which uname; [[ $(uname) = Darwin ]]) &> /dev/null; then
+    alias ls='ls -G'
+else
+    alias ls='ls --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+fi
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
