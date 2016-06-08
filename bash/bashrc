@@ -24,9 +24,13 @@ HISTFILESIZE=65536
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe.sh ] && eval "$(SHELL=/bin/sh lesspipe.sh)"
 
-alias ls='ls --color=auto'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
+if (which uname; [[ $(uname) = Darwin ]]) &> /dev/null; then
+    alias ls='ls -G'
+else
+    alias ls='ls --color=auto'
+    alias dir='dir --color=auto'
+    alias vdir='vdir --color=auto'
+fi
 
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
