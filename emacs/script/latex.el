@@ -1,5 +1,7 @@
-(load "auctex.el" nil t t)
-(load "preview-latex.el" nil t t)
+(ignore-errors
+  (progn
+    (load "auctex.el" nil t t)
+    (load "preview-latex.el" nil t t)))
 (defun my-latex-mode()
   (interactive)
   (define-key LaTeX-mode-map [return] 'newline-and-indent)
