@@ -120,3 +120,6 @@ alias "nwemacs=emacs -nw"
 }
 
 alias 'sudo=sudo '
+
+# added by travis gem
+[ -f ${HOME}/.travis/travis.sh ] && source ${HOME}/.travis/travis.sh
