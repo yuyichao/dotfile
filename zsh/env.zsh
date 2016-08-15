@@ -30,7 +30,11 @@ else
 fi
 export CFLAGS="-g -Wall -Wextra ${_cwflags} -pipe"
 export CXXFLAGS="-g -Wall -Wextra ${_cwflags} -pipe"
-export MAKEFLAGS="-j7 -l8 --no-print-directory"
+if [[ -z $MAKEFLAGS ]]; then
+    export MAKEFLAGS="-j7 -l8 --no-print-directory"
+else
+    export MAKEFLAGS="$MAKEFLAGS --no-print-directory"
+fi
 
 if [[ $(gcc -dumpmachine 2> /dev/null) =~ ^i686 ]]; then
     CFLAGS+=' -march=pentium4'

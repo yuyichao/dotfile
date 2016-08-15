@@ -89,7 +89,11 @@ fi
 # export d_bin="${HOME}/bin"
 # #export d_knl="${HOME}/kernel"
 # export d_pknl="${d_pro}/kernel"
-export MAKEFLAGS="-j7 -l8 --no-print-directory"
+if [[ -z $MAKEFLAGS ]]; then
+    export MAKEFLAGS="-j7 -l8 --no-print-directory"
+else
+    export MAKEFLAGS="$MAKEFLAGS --no-print-directory"
+fi
 
 # alias "ddoc=d ${d_doc}"
 # alias "dmit=d ${d_mit}"
