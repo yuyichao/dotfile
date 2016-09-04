@@ -30,10 +30,16 @@ else
 fi
 export CFLAGS="-g -Wall -Wextra ${_cwflags} -pipe"
 export CXXFLAGS="-g -Wall -Wextra ${_cwflags} -pipe"
-if [[ -z $MAKEFLAGS ]]; then
-    export MAKEFLAGS="-j7 -l8 --no-print-directory"
-else
+if [[ -n $MAKEFLAGS ]]; then
     export MAKEFLAGS="$MAKEFLAGS --no-print-directory"
+elif (which nproc && nproc) &> /dev/null; then
+    np=$(nproc 2> /dev/null)
+    if [[ -z $np ]]; then
+        np=1
+    fi
+    export MAKEFLAGS="-j$np -l$np --no-print-directory"
+else
+    export MAKEFLAGS="--no-print-directory"
 fi
 
 if [[ $(gcc -dumpmachine 2> /dev/null) =~ ^i686 ]]; then
