@@ -2,7 +2,7 @@
 AntiAliasFonts=true
 BoldIntense=true
 ColorScheme=YYC2
-Font=DejaVu Sans Mono,23,-1,5,75,0,0,0,0,0
+Font=DejaVu Sans Mono,23,-1,5,50,0,0,0,0,0
 
 [Cursor Options]
 UseCustomCursorColor=true
