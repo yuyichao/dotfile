@@ -1,1 +1,2 @@
 backend: Qt4Agg
+image.cmap: viridis
