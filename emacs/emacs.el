@@ -26,7 +26,22 @@
  '(py-use-number-face-p nil t)
  '(safe-local-variable-values
    (quote
-    ((c-file-offsets
+    ((eval c-set-offset
+           (quote arglist-close)
+           0)
+     (eval c-set-offset
+           (quote arglist-intro)
+           (quote ++))
+     (eval c-set-offset
+           (quote case-label)
+           0)
+     (eval c-set-offset
+           (quote statement-case-open)
+           0)
+     (eval c-set-offset
+           (quote substatement-open)
+           0)
+     (c-file-offsets
       (innamespace . 0)
       (inline-open . 0)
       (case-label . +))
