@@ -1,6 +1,7 @@
 #Set PS's
 
-PS1=$'%{\e[01;31m%}%m%{\e[01;35m%}:%{\e[01;34m%}%~\n%{\e[01;32m%}%n%{\e[01;36m%}%# %{\e[00m%}'
+# PS1=$'%{\e[01;31m%}%m%{\e[01;35m%}:%{\e[01;34m%}%~\n%{\e[01;32m%}%n%{\e[01;36m%}%# %{\e[00m%}'
+PS1=$'%{\e[01;32m%}%n%{\e[01;36m%}%# %{\e[00m%}'
 PS2=$'%{\e[01;31m%}> %{\e[00m%}'
 
 # Set Term Title
@@ -22,6 +23,7 @@ set_term_title() {
 }
 
 function _term_title_precmd {
+    print -P $'%{\e[01;31m%}%m%{\e[01;35m%}:%{\e[01;34m%}%~'
     set_term_title "$(print -nP "${TERM_TITLE}")"
 }
 
