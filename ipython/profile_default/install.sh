@@ -1,3 +1,3 @@
 #!/bin/sh
 
-link_home ipython_config.py .config/ipython/profile_default/ipython_config.py
+link_home ipython_config.py .ipython/profile_default/ipython_config.py
