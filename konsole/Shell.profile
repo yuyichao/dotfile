@@ -1,8 +1,8 @@
 [Appearance]
 AntiAliasFonts=true
 BoldIntense=true
-ColorScheme=YYC2
-Font=DejaVu Sans Mono,23,-1,5,50,0,0,0,0,0
+ColorScheme=YYC
+Font=DejaVu Sans Mono,12,-1,5,50,0,0,0,0,0
 
 [Cursor Options]
 UseCustomCursorColor=true
@@ -24,8 +24,9 @@ StartInCurrentSessionDir=true
 TabBarMode=1
 
 [Interaction Options]
-CtrlRequiredForDrag=false
+CtrlRequiredForDrag=true
 MouseWheelZoomEnabled=false
+TrimTrailingSpacesInSelectedText=true
 TripleClickMode=0
 
 [Keyboard]
