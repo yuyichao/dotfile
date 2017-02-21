@@ -52,4 +52,5 @@ else
     add_subdir konsole
     add_subdir fontconfig
     add_subdir nacs-lab
+    add_subdir jupyter
 fi
