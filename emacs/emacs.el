@@ -78,7 +78,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :height 233 :width normal :slant normal :weight bold))))
+ '(default ((t (:family "DejaVu Sans Mono" :foundry "unknown" :height 115 :width normal :slant normal :weight bold))))
  '(font-lock-string-face ((t (:foreground "deeppink"))))
  '(linum ((t (:inherit (shadow default) :background "#00ff87" :foreground "#0000ff" :weight bold))))
  '(mode-line ((t (:background "#afd7ff" :foreground "#00af00" :box (:line-width -1 :style released-button)))))
