@@ -7,7 +7,7 @@ source "$ZSH/options.zsh"
 source "$ZSH/env.zsh"
 
 if which dircolors &> /dev/null; then
-   eval $(dircolors)
+   eval $(dircolors 2> /dev/null)
 fi
 zstyle :compinstall filename '${HOME}/.zshrc'
 autoload -Uz compinit
