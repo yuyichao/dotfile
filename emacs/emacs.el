@@ -16,6 +16,7 @@
  '(global-whitespace-mode t)
  '(history-length t)
  '(julia-indent-offset 4)
+ '(octave-block-offset 4)
  '(pdb-path (quote /usr/lib/python3\.3/pdb\.py))
  '(py-beep-if-tab-change nil)
  '(py-complete-function (quote py-shell-complete))
