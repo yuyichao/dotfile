@@ -8,8 +8,12 @@
 
 export EDITOR=emacs
 
-[[ -d "$HOME/bin" ]] && ! [[ ":${PATH}:" =~ ":${HOME}/bin:" ]] && {
+[[ -d "${HOME}/bin" ]] && ! [[ ":${PATH}:" =~ ":${HOME}/bin:" ]] && {
     export PATH="${HOME}/bin:${PATH}"
+}
+
+[[ -d "/mingw64/bin" ]] && ! [[ ":${PATH}:" =~ ":/mingw64/bin:" ]] && {
+    export PATH="/mingw64/bin:${PATH}"
 }
 
 case "$COLORTERM" in
