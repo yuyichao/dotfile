@@ -1,5 +1,13 @@
 # TODO
 
+if which uname &> /dev/null && [[ $(uname -o) == "Msys" ]]; then
+    # Workaround zsh autocompletion of windows drive path.
+    # Ref https://github.com/msys2/MSYS2-packages/issues/38
+    drives=$(mount | sed -rn 's#^[A-Z]: on /([a-z]).*#\1#p' | tr '\n' ' ')
+    zstyle ':completion:*' fake-files /: "/:$drives"
+    unset drives
+fi
+
 WORDCHARS=''
 
 zmodload -i zsh/complist
