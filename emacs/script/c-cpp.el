@@ -27,6 +27,10 @@
   (define-key c++-mode-map (kbd "M-j") 'windmove-down)
   (define-key c-mode-map (kbd "C-c C-w") 'delete-region)
   (define-key c++-mode-map (kbd "C-c C-w") 'delete-region)
+  (define-key c-mode-map (kbd "C-c C-k") 'uncomment-region)
+  (define-key c++-mode-map (kbd "C-c C-k") 'uncomment-region)
+  (define-key c-mode-map (kbd "C-c C-c") 'c-toggle-comment-style)
+  (define-key c++-mode-map (kbd "C-c C-c") 'c-toggle-comment-style)
   )
 
 (defun my-set-c-style()
