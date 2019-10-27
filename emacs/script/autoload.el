@@ -1,6 +1,7 @@
 (autoload 'pkgbuild-mode "pkgbuild-mode.el" "PKGBUILD mode." t)
 (add-to-list 'auto-mode-alist
              '("/\\(_\\)?PKGBUILD\\(-git\\)?$" . pkgbuild-mode))
+;; Web
 
 (autoload 'php-mode "php-mode.el" "Php mode." t)
 (add-to-list 'auto-mode-alist '("\\.php[345]?$" . php-mode))
@@ -10,10 +11,50 @@
 (add-to-list 'auto-mode-alist '("\\.md$" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.markdown$" . markdown-mode))
 
-;; (autoload 'js2-mode "js2-mode.el" "Javascript mode." t)
-;; (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
-;; (add-to-list 'auto-mode-alist '("\\.json$" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
+(if (try-require 'web-mode)
+    (progn
+      (add-to-list 'auto-mode-alist '("\\.phtml$" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.tpl\\.php$" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.[agj]sp$" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.as[cp]x$" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.erb$" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.mustache$" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.djhtml$" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.html?$" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.js$" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.css$" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.scss$" . web-mode))
+      (add-to-list 'auto-mode-alist '("\\.xml$" . web-mode))
+      (setq web-mode-content-types-alist '(("jsx" . "\\.js[x]?\\'")))
+      (defun my-web-mode-hook ()
+        (setq web-mode-markup-indent-offset 2)
+        (setq web-mode-css-indent-offset 2)
+        (setq web-mode-code-indent-offset 4)
+        (setq web-mode-script-padding 4)
+        (setq web-mode-attr-indent-offset 2)
+        (setq web-mode-enable-css-colorization t)
+        ;; (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
+        ;; (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
+        ;; (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
+        ;; (add-to-list 'web-mode-indentation-params '("lineup-quotes" . nil))
+        ;; (add-to-list 'web-mode-indentation-params '("lineup-ternary" . nil))
+        ;; (add-to-list 'web-mode-indentation-params '("case-extra-offset" . nil))
+        ;; (setq web-mode-comment-formats
+        ;;       '(("java"       . "/*")
+        ;;         ("javascript" . "//")
+        ;;         ("php"        . "/*")
+        ;;         ))
+        ;; (define-key (current-local-map) (kbd "M-'") 'web-mode-comment-or-uncomment)
+        ;; (when (string-match "\\.html?$" buffer-file-name)
+        ;;   (electric-indent-local-mode -1))
+        )
+      (add-hook 'web-mode-hook  'my-web-mode-hook))
+  (progn
+    (add-to-list 'auto-mode-alist '("\\.js$" . js-mode))
+    ))
+;; You can also edit plain js, jsx, css, scss, xml files.
+
 (add-to-list 'auto-mode-alist '("\\.json$" . js-mode))
 
 (autoload 'qml-mode "qml-mode.el" "Qml mode." t)
@@ -59,15 +100,15 @@
 (add-to-list 'auto-mode-alist '("fbtermrc$" . conf-unix-mode))
 (add-to-list 'auto-mode-alist '("muttrc$" . sh-mode))
 
-(if (try-require 'multi-web-mode)
-    (progn
-      (setq mweb-default-major-mode 'html-mode)
-      (setq mweb-tags '((php-mode "<\\?php\\|<\\? \|<\\?=" "\\?>")
-                        (js-mode "<script\\( [^>]*\\)?>" "</script>")
-                        (css-mode "<style +type=\"text/css\"[^>]*>" "</style>")))
-      (setq mweb-filename-extensions
-            '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
-      (multi-web-global-mode 1)))
+;; (if (try-require 'multi-web-mode)
+;;     (progn
+;;       (setq mweb-default-major-mode 'html-mode)
+;;       (setq mweb-tags '((php-mode "<\\?php\\|<\\? \|<\\?=" "\\?>")
+;;                         (js-mode "<script\\( [^>]*\\)?>" "</script>")
+;;                         (css-mode "<style +type=\"text/css\"[^>]*>" "</style>")))
+;;       (setq mweb-filename-extensions
+;;             '("php" "htm" "html" "ctp" "phtml" "php4" "php5"))
+;;       (multi-web-global-mode 1)))
 
 (defun load-cmake-hook()
   (add-hook 'cmake-mode-hook 'my-cmake-mode))
