@@ -103,6 +103,7 @@
 (autoload 'yaml-mode "yaml-mode.el"
   "Major mode for editing YAML files" t)
 (add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
+(add-to-list 'auto-mode-alist '("\\.yaml$" . yaml-mode))
 
 (autoload 'go-mode "go-mode.el" "Go mode." t)
 (add-to-list 'auto-mode-alist '("\\.go$" . go-mode))
