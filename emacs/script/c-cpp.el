@@ -45,6 +45,10 @@
   (c-set-offset 'label 0)
   (c-set-offset 'inline-open 0)
   (c-set-offset 'access-label '-)
+  (c-set-offset 'inlambda 0)
+  ;; (c-set-offset 'substatement-open 0)
+  ;; (c-set-offset 'block-open 0)
+  ;; (c-set-offset 'knr-argdecl-intro 0)
   )
 
 (defun my-set-c-highlight()
