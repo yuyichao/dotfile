@@ -6,3 +6,5 @@
 ;; (load "folding" 'nomessage 'noerror)
 ;; (folding-add-to-marks-list 'python-mode "# {{{" "# }}}" nil t)
 ;; (folding-mode-add-find-file-hook)
+
+(global-eldoc-mode -1)
