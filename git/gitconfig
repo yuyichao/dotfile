@@ -5,20 +5,11 @@
 [core]
         editor = emacs
         excludesfile = /home/yuyichao/.config/git/gitignore
+        quotePath = false
 [color]
         ui = true
 [push]
         default = current
-[difftool "ediff"]
-        cmd = ediff ${LOCAL} ${REMOTE} ${MERGED}
-[diff]
-        tool = ediff
-        guitool = ediff
-[mergetool "ediff"]
-        cmd = ediff ${LOCAL} ${REMOTE} ${MERGED} ${BASE}
-        trustExitCode = true
-[merge]
-        tool = ediff
 [remote-hg]
         hg-git-compat = true
 [url "git://anongit.kde.org/"]
