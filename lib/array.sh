@@ -6,9 +6,24 @@
 # ${name}__array_${idx}: element, 1-base
 # No other local variables are used.
 
-array_def() {
+_array_set_len() {
     # $1 name
-    eval "${1}__array_len=0"
+    # $2 length
+    eval "${1}__array_len=$2"
+}
+
+_array_set() {
+    # $1 name
+    # $2 index
+    # $3 value
+    eval "${1}__array_${2}=\$3"
+}
+
+_array_get() {
+    # $1 name
+    # $2 index
+    # $3 variable
+    eval "$3=\${${1}__array_${2}}"
 }
 
 _array_length_lt() {
@@ -17,12 +32,25 @@ _array_length_lt() {
     eval test $2 -gt "\${${1}__array_len}"
 }
 
+array_def() {
+    # $1 name
+    _array_set_len $1 0
+}
+
 array_push() {
     # $1 name
     # $2 new value
     eval set -- $1 '"$2"' "\${${1}__array_len}"
-    eval "${1}__array_$(($3 + 1))=\$2"
-    eval "${1}__array_len=$(($3 + 1))"
+    _array_set $1 "$(($3 + 1))" "$2"
+    _array_set_len $1 "$(($3 + 1))"
+}
+
+array_pop() {
+    # $1 name
+    # $2 var
+    eval set -- $1 $2 "\${${1}__array_len}"
+    _array_get $1 $3 $2
+    _array_set_len $1 "$(($3 - 1))"
 }
 
 array_min_len() {
@@ -39,7 +67,7 @@ array_resize() {
     if _array_length_lt $1 $2; then
         array_min_len $1 $2
     else
-        eval "${1}__array_len=$2"
+        _array_set_len $1 $2
     fi
 }
 
@@ -48,7 +76,7 @@ array_set() {
     # $2 index
     # $3 value
     array_min_len $1 $2
-    eval "${1}__array_${2}=\$3"
+    _array_set $1 $2 "$3"
 }
 
 array_get() {
@@ -58,7 +86,7 @@ array_get() {
     if _array_length_lt $1 $2; then
         eval "$3=''"
     else
-        eval "$3=\${${1}__array_${2}}"
+        _array_get $1 $2 $3
     fi
 }
 
@@ -88,12 +116,12 @@ array_foreach() {
     # $4 function
     # ${@:5} rest of arguments to pass to the callback
     while ! _array_length_lt $3 $1; do
-        eval $4 $1 "\"\${${3}__array_${1}}\"" "\${${3}__array_len}" $3 "$2"
-        eval 'set -- $(($1 + 1)) "$2" $3 $4' "$2"
+        eval '$4' $1 "\"\${${3}__array_${1}}\"" "\${${3}__array_len}" $3 "$2"
+        eval 'set -- $(($1 + 1)) "$2" $3 "$4"' "$2"
     done
 }
 
-if command -v sed; then
+if command -v sed >/dev/null 2>&1; then
     _array_quote() {
         printf '%s\n' "$1" | sed "s/'/'\\\\''/g;1s/^/'/;\$s/\$/'/"
     }
