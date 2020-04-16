@@ -32,9 +32,14 @@ _array_length_lt() {
     eval test $2 -gt "\${${1}__array_len}"
 }
 
-array_def() {
+array_clear() {
     # $1 name
     _array_set_len $1 0
+}
+
+array_def() {
+    # $1 name
+    array_clear $1
 }
 
 array_push() {
@@ -119,6 +124,21 @@ array_foreach() {
         eval '$4' $1 "\"\${${3}__array_${1}}\"" "\${${3}__array_len}" $3 "$2"
         eval 'set -- $(($1 + 1)) "$2" $3 "$4"' "$2"
     done
+}
+
+_array_append_elfunc() {
+    # $1: index
+    # $2: value
+    # $3: total length
+    # $4: src array name
+    # $5: dest array name
+    array_push $5 "$2"
+}
+
+array_append() {
+    # $1 dest
+    # $2 src
+    array_foreach $1 _array_append_elfunc $2
 }
 
 if command -v sed >/dev/null 2>&1; then
