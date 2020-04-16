@@ -12,6 +12,12 @@ _array_set_len() {
     eval "${1}__array_len=$2"
 }
 
+array_length() {
+    # $1 name
+    # $2 var
+    eval "$2=\${${1}__array_len}"
+}
+
 _array_set() {
     # $1 name
     # $2 index
@@ -53,8 +59,10 @@ array_push() {
 array_pop() {
     # $1 name
     # $2 var
-    eval set -- $1 $2 "\${${1}__array_len}"
-    _array_get $1 $3 $2
+    eval set -- "$1" '"$2"' "\${${1}__array_len}"
+    if test -n "$2"; then
+        _array_get $1 $3 $2
+    fi
     _array_set_len $1 "$(($3 - 1))"
 }
 
@@ -138,7 +146,27 @@ _array_append_elfunc() {
 array_append() {
     # $1 dest
     # $2 src
-    array_foreach $1 _array_append_elfunc $2
+    array_foreach $2 _array_append_elfunc $1
+}
+
+_array_equal_elfunc() {
+    # $1: index
+    # $2: value
+    # $3: total length
+    # $4: array1 name
+    # $5: array2 name
+    if eval test "\"\${${5}__array_$1}\"" != "\"\$2\""; then
+        echo 1
+    fi
+}
+
+array_equal() {
+    # $1: array1 name
+    # $2: array2 name
+    if eval test "\${${1}__array_len}" != "\${${2}__array_len}"; then
+        return 1
+    fi
+    test -z "$(array_foreach $1 _array_equal_elfunc $2)"
 }
 
 if command -v sed >/dev/null 2>&1; then
