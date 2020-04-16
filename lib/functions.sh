@@ -190,9 +190,12 @@ current_dir=$srcdir
 array_def dir_stack
 
 link_home() {
+    link_abs "$1" "${HOME}/$2"
+}
+
+link_abs() {
     src=$1
-    dst=$2
-    fulldst=${HOME}/${dst}
+    fulldst=$2
     dst_path=$(dirname "${fulldst}")
     array_push srclist "${current_dir}/${src}"
     array_push dstlist "${fulldst}"
@@ -209,6 +212,8 @@ add_subdir() {
     fi
     array_push dir_stack "${current_dir}"
     current_dir=${current_dir}/$1
+    cd "$current_dir"
     . "$current_dir/install.sh"
     array_pop dir_stack current_dir
+    cd "$current_dir"
 }

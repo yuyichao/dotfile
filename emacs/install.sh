@@ -1,5 +1,9 @@
 #!/bin/sh
 
-link_home emacs.el .emacs
+if ((islinux)); then
+    link_home emacs.el .emacs
+else
+    link_home emacs-win.el .emacs
+fi
 link_home module .emacs.d/module
 link_home script .emacs.d/script
