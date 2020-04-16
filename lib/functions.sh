@@ -7,6 +7,8 @@
 
 current_dir=$srcdir
 
+array_def dir_stack
+
 link_home() {
     src=$1
     dest=$2
@@ -20,19 +22,9 @@ link_home() {
     echo "${current_dir}/${src}" "->" "${fulldest}"
 }
 
-prev_ptr=current_dir_var
-
 add_subdir() {
-    # Caller
-    next_current_dir=${current_dir}/$1
-
-    next_prev_ptr="${prev_ptr}0"
-    eval ${next_prev_ptr}='$prev_ptr'
-    eval ${next_prev_ptr}_name='$current_dir'
-
-    prev_ptr=$next_prev_ptr
-    current_dir=$next_current_dir
+    array_push dir_stack "${current_dir}"
+    current_dir=${current_dir}/$1
     . "$current_dir/install.sh"
-    eval current_dir='$'${prev_ptr}_name
-    eval prev_ptr='$'${prev_ptr}
+    array_pop dir_stack current_dir
 }
