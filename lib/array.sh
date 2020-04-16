@@ -210,6 +210,23 @@ array_equal() {
     test -z "$(array_foreach $1 _array_equal_elfunc $2)"
 }
 
+_array_contains_elfunc() {
+    # $1: index
+    # $2: value
+    # $3: total length
+    # $4: array1 name
+    # $5: probe value
+    if test "$2" = "$5"; then
+        echo 1
+    fi
+}
+
+array_contains() {
+    # $1: array1 name
+    # $2: value
+    test -n "$(array_foreach $1 _array_contains_elfunc "$2")"
+}
+
 if command -v sed >/dev/null 2>&1; then
     _array_quote() {
         printf '%s\n' "$1" | sed "s/'/'\\\\''/g;1s/^/'/;\$s/\$/'/"
