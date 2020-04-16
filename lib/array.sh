@@ -6,6 +6,35 @@
 # ${name}__array_${idx}: element, 1-base
 # No other local variables are used.
 
+_array_make_rest_cmd_list() {
+    # $1 start
+    # $2 end (include)
+    while test $1 -le $2; do
+        printf '"$%d" ' $1
+        set -- $(($1 + 1)) $2
+    done
+}
+
+# Callback is called with
+# $1: index
+# $2: total iteration
+# ${@:3}: rest of the parameters passed to `array_foreach`
+_array_loop() {
+    # $1 iteration
+    # $2 function
+    # ${@:3} rest of arguments to pass to the callback
+    set -- 1 "$(_array_make_rest_cmd_list 5 $(($# + 2)))" "$@"
+    # $1 loop index
+    # $2 string evals to rest of the arguments
+    # $3 iteration
+    # $4 function
+    # ${@:5} rest of arguments to pass to the callback
+    while test $1 -le $3; do
+        eval '"$4"' $1 $3 "$2"
+        eval 'set -- $(($1 + 1)) "$2" $3 "$4"' "$2"
+    done
+}
+
 _array_set_len() {
     # $1 name
     # $2 length
@@ -53,12 +82,26 @@ array_def() {
     array_clear $1
 }
 
-array_push() {
+_array_push() {
     # $1 name
     # $2 new value
     eval set -- $1 '"$2"' "\${${1}__array_len}"
     _array_set $1 "$(($3 + 1))" "$2"
     _array_set_len $1 "$(($3 + 1))"
+}
+
+_array_push_cb() {
+    # $1 index
+    # $2 total length
+    # $3 name
+    # ${@:4} values
+    eval _array_push $3 "\"\${$(($1 + 3))}\""
+}
+
+array_push() {
+    # $1 name
+    # ${@:2} new values
+    eval _array_loop $(($# - 1)) _array_push_cb '"$@"'
 }
 
 array_pop() {
@@ -75,7 +118,7 @@ array_min_len() {
     # $1 name
     # $2 length
     while _array_length_lt $1 $2; do
-        array_push $1 ''
+        _array_push $1 ''
     done
 }
 
@@ -108,35 +151,28 @@ array_get() {
     fi
 }
 
-_array_make_rest_cmd_list() {
-    # $1 start
-    # $2 end (include)
-    while test $1 -le $2; do
-        printf '"$%d" ' $1
-        set -- $(($1 + 1)) $2
-    done
+_array_foreach_cb() {
+    # $1 index
+    # $2 total length
+    # $3 string evals to rest of the arguments
+    # $4 name
+    # $5 function
+    # ${@:6}
+    eval '"$5"' $1 "\"\${${4}__array_${1}}\"" "$2" $4 "$3"
 }
 
 # Callback is called with
-# $1: index
-# $2: value
-# $3: total length
-# $4: array name
-# ${@:5}: rest of the parameters passed to `array_foreach`
+# $1 index
+# $2 value
+# $3 total length
+# $4 array name
+# ${@:5} rest of the parameters passed to `array_foreach`
 array_foreach() {
     # $1 name
     # $2 function
     # ${@:3} rest of arguments to pass to the callback
-    set -- 1 "$(_array_make_rest_cmd_list 5 $(($# + 2)))" "$@"
-    # $1 loop index
-    # $2 string evals to rest of the arguments
-    # $3 name
-    # $4 function
-    # ${@:5} rest of arguments to pass to the callback
-    while ! _array_length_lt $3 $1; do
-        eval '$4' $1 "\"\${${3}__array_${1}}\"" "\${${3}__array_len}" $3 "$2"
-        eval 'set -- $(($1 + 1)) "$2" $3 "$4"' "$2"
-    done
+    eval _array_loop "\${${1}__array_len}" \
+         _array_foreach_cb '"$(_array_make_rest_cmd_list 6 $(($# + 3)))"' '"$@"'
 }
 
 _array_append_elfunc() {
@@ -145,7 +181,7 @@ _array_append_elfunc() {
     # $3: total length
     # $4: src array name
     # $5: dest array name
-    array_push $5 "$2"
+    _array_push $5 "$2"
 }
 
 array_append() {
