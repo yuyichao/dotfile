@@ -35,7 +35,12 @@ _array_get() {
 _array_length_lt() {
     # $1 name
     # $2 length
-    eval test $2 -gt "\${${1}__array_len}"
+    eval test "\${${1}__array_len}" -lt $2
+}
+
+array_empty() {
+    # $1 name
+    _array_length_lt $1 1
 }
 
 array_clear() {
