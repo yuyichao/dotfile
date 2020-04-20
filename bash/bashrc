@@ -69,26 +69,8 @@ if [[ -z $DISPLAY ]]; then
     export LANG=en_US.UTF-8
 else
     true
-    #export LANG=zh_CN.UTF-8
 fi
 
-# d() {
-#     local path=''
-#     for ((i = 1;i <= $#;i++)) ;do
-#         path+=${!i}/
-#     done
-#     cd "$path"
-# }
-
-# export d_doc="${HOME}/Document"
-# export d_cis="${d_doc}/Computer-Information"
-# export d_mit="${d_doc}/mit"
-# export d_pro="${HOME}/programming"
-# #export d_hack="${HOME}/hack"
-# export d_tmp="${HOME}/tmp"
-# export d_bin="${HOME}/bin"
-# #export d_knl="${HOME}/kernel"
-# export d_pknl="${d_pro}/kernel"
 if [[ -n $MAKEFLAGS ]]; then
     export MAKEFLAGS="$MAKEFLAGS --no-print-directory"
 elif (which nproc && nproc) &> /dev/null; then
@@ -100,16 +82,6 @@ elif (which nproc && nproc) &> /dev/null; then
 else
     export MAKEFLAGS="--no-print-directory"
 fi
-
-# alias "ddoc=d ${d_doc}"
-# alias "dmit=d ${d_mit}"
-# alias "dcis=d ${d_cis}"
-# alias "dpro=d ${d_pro}"
-# #alias "dhack=d ${d_hack}"
-# alias "dtmp=d ${d_tmp}"
-# alias "dbin=d ${d_bin}"
-# #alias "dknl=d ${d_knl}"
-# alias "dpknl=d ${d_pknl}"
 
 alias "nwemacs=emacs -nw"
 
@@ -128,9 +100,9 @@ alias "nwemacs=emacs -nw"
 # [[ -f /usr/lib/ccache/bin/cc ]] && export CC=/usr/lib/ccache/bin/cc
 # [[ -f /usr/lib/ccache/bin/c++ ]] && export CXX=/usr/lib/ccache/bin/c++
 
-[[ -z $DISPLAY ]] || {
-    alias 'ssh=ssh -X'
-}
+# [[ -z $DISPLAY ]] || {
+#     alias 'ssh=ssh -X'
+# }
 
 if which dircolors &> /dev/null; then
    eval $(dircolors 2> /dev/null)
