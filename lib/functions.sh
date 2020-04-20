@@ -16,6 +16,8 @@ array_def old_filter
 
 action=''
 
+needs_subdir=1
+
 print_help() {
     cat <<EOF
 Usage $0 [-h|--help|-<profile_name>|<action> <options...>]
@@ -41,6 +43,14 @@ Actions:
   Filters: all arguments following the options are treated as filters
     only top level directories in the list will be installed.
     This will be added to existing filters if any.
+
+* diff
+
+  Compare installed file and the one in the repo.
+
+* copy_back
+
+  Copy the installed files back to the repo.
 
 EOF
 }
@@ -87,6 +97,20 @@ process_args() {
             done
             shift $(($OPTIND - 1))
             array_push filter "$@"
+            ;;
+        diff)
+            if test $# -ne 0; then
+                echo "Unnknown option for diff: $*" >&2
+                exit 1
+            fi
+            needs_subdir=0
+            ;;
+        copy_back)
+            if test $# -ne 0; then
+                echo "Unnknown option for copy_back: $*" >&2
+                exit 1
+            fi
+            needs_subdir=0
             ;;
         *)
             echo "Unknown action: '$action'" >&2
@@ -178,10 +202,60 @@ do_install() {
     array_foreach srclist _install_src
 }
 
+_diff_cmd=''
+
+_diff_cb() {
+    # $1 index
+    # $2 value
+    src="$2"
+    array_get old_dstlist $1 dst
+    $_diff_cmd -u "$src" "$dst"
+}
+
+do_diff() {
+    if command -v colordiff >/dev/null 2>&1; then
+        _diff_cmd=colordiff
+    else
+        _diff_cmd=diff
+    fi
+    _pager_cmd=''
+    if command -v less >/dev/null 2>&1; then
+        _pager_cmd='less -R'
+    elif command -v more >/dev/null 2>&1; then
+        _pager_cmd='more'
+    fi
+    if test -z "$_pager_cmd"; then
+        array_foreach old_srclist _diff_cb
+    else
+        array_foreach old_srclist _diff_cb | $_pager_cmd
+    fi
+}
+
+_copy_back_cb() {
+    # $1 index
+    # $2 value
+    src="$2"
+    array_get old_dstlist $1 dst
+    if test -d "$dst"; then
+        rm -rfv "$src"
+        cp -rv "$dst" "$src"
+    else
+        cp -v "$dst" "$src"
+    fi
+}
+
+do_copy_back() {
+    array_foreach old_srclist _copy_back_cb
+}
+
 finalize() {
     if test $action = install; then
         do_install
         save_state
+    elif test $action = diff; then
+        do_diff
+    elif test $action = copy_back; then
+        do_copy_back
     fi
 }
 
