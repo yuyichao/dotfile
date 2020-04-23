@@ -5,6 +5,7 @@ ColorScheme=YYC
 Font=DejaVu Sans Mono,12,-1,5,50,0,0,0,0,0
 
 [Cursor Options]
+CustomCursorColor=0,0,0
 UseCustomCursorColor=true
 
 [General]
