@@ -10,6 +10,10 @@ DefaultProfile=Shell.profile
 [Favorite Profiles]
 Favorites=Shell.profile
 
+[FileDialogSize]
+Height 1080=487
+Width 1920=717
+
 [KFileDialog Settings]
 Height 1200=630
 Width 1920=1008
