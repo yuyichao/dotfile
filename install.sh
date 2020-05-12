@@ -7,6 +7,15 @@ cd "$(dirname "$script")"
 srcdir="$PWD"
 cd "$workdir"
 
+# If we started in `$srcdir`, use a default workdir of `$srcdir/build`.
+# This make sure (reasonably so) that we don't accidentally run without a build directory
+# and allow simply running `./install.sh` by default.
+if [ "$PWD" = "$srcdir" ]; then
+    workdir="$srcdir/build"
+    mkdir -p "$workdir"
+    cd "$workdir"
+fi
+
 . "$srcdir/lib/functions.sh"
 
 initialize "$@"
