@@ -1,2 +1,2 @@
-backend: TkAgg
+backend: Qt5Agg
 image.cmap: viridis
