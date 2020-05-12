@@ -18,6 +18,7 @@
  '(julia-indent-offset 4)
  '(octave-block-offset 4)
  '(pdb-path (quote /usr/lib/python3\.3/pdb\.py))
+ '(pkgbuild-update-sums-on-save nil)
  '(py-beep-if-tab-change nil)
  '(py-complete-function (quote py-shell-complete))
  '(py-hide-show-minor-mode-p t)
