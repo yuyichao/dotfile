@@ -8,15 +8,21 @@ PS2=$'%{\e[01;31m%}> %{\e[00m%}'
 TERM_TITLE="%~"
 
 set_term_title() {
+    local title="$1"
+    if [[ -n "$ET_VERSION" ]]; then
+        # et does not get pick up by konsole as remote so we can set the host
+        # in the title maually.
+        title="$(print -nP "%m"): $title"
+    fi
     case $TERM in
         sun-cmd)
             print -n "\e]l"
-            print -nR "$1" | tr '\n' ' ' | sed -e 's/[[:space:]]\+/ /g'
+            print -nR "$title" | tr '\n' ' ' | sed -e 's/[[:space:]]\+/ /g'
             print -n "\e\\"
             ;;
         *xterm*|rxvt|dtterm|kterm|Eterm)
             print -n "\e]2;"
-            print -nR "$1" | tr '\n' ' ' | sed -e 's/[[:space:]]\+/ /g'
+            print -nR "$title" | tr '\n' ' ' | sed -e 's/[[:space:]]\+/ /g'
             print -n "\a"
             ;;
     esac
