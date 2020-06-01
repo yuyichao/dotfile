@@ -12,7 +12,7 @@ set_term_title() {
     if [[ -n "$ET_VERSION" ]]; then
         # et does not get pick up by konsole as remote so we can set the host
         # in the title maually.
-        title="$(print -nP "%m"): $title"
+        title="$(print -nP "%m") : $title"
     fi
     case $TERM in
         sun-cmd)
