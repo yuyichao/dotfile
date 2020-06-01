@@ -1,7 +1,10 @@
+[user]
+        name = Yichao Yu
+        email = yyc1992@gmail.com
+        signingkey = yyc1992@gmail.com
 [core]
         editor = emacs
         quotePath = false
-        autocrlf = true
 [color]
         ui = true
 [push]
@@ -18,5 +21,3 @@
         pushInsteadOf = github:
 [url "gitlab@yuyichao.com:"]
         insteadOf = yycgit:
-[commit]
-        gpgsign = true

@@ -11,9 +11,9 @@
         default = current
 [remote-hg]
         hg-git-compat = true
-[url "git://anongit.kde.org/"]
+[url "https://invent.kde.org/"]
         insteadOf = kde:
-[url "git@git.kde.org:"]
+[url "git@invent.kde.org:"]
         pushInsteadOf = kde:
 [url "git://github.com/"]
         insteadOf = github:

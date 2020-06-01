@@ -38,7 +38,7 @@ if ((needs_subdir)); then
         add_subdir ipython
         add_subdir tmux
         add_subdir jupyter
-        if test "$profile" = home; then
+        if test "$profile" = home || test "$profile" = yuyichao; then
             add_subdir fbterm
             add_subdir mutt
             add_subdir hg
