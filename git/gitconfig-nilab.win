@@ -1,6 +1,10 @@
+[user]
+        name = Ni Lab
+        email = niharvardlab@gmail.com
 [core]
         editor = emacs
         quotePath = false
+        autocrlf = true
 [color]
         ui = true
 [push]

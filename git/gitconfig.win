@@ -1,6 +1,7 @@
 [core]
         editor = emacs
         quotePath = false
+        autocrlf = true
 [color]
         ui = true
 [push]
