@@ -7,4 +7,5 @@
 ;; (folding-add-to-marks-list 'python-mode "# {{{" "# }}}" nil t)
 ;; (folding-mode-add-find-file-hook)
 
-(global-eldoc-mode -1)
+(when (fboundp 'global-eldoc-mode))
+  (global-eldoc-mode -1))
