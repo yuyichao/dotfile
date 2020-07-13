@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if ((islinux)); then
+if [ "$islinux" = 1 ]; then
     if test -f gitconfig-$profile; then
         link_home gitconfig-$profile .gitconfig
     else

@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if ((islinux)); then
+if [ "$islinux" = 1 ]; then
     link_home emacs.el .emacs
 else
     link_home emacs-win.el .emacs
