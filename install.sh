@@ -20,7 +20,7 @@ fi
 
 initialize "$@"
 
-if ((needs_subdir)); then
+if [ "$needs_subdir" = 1 ]; then
     case "$(uname)" in
         [Ll]inux*)
             islinux=1
@@ -34,7 +34,7 @@ if ((needs_subdir)); then
     add_subdir emacs
     add_subdir zsh
     add_subdir bash
-    if ((islinux)); then
+    if [ "$islinux" = 1 ]; then
         add_subdir ipython
         add_subdir tmux
         add_subdir jupyter
