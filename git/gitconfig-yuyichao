@@ -21,3 +21,5 @@
         pushInsteadOf = github:
 [url "gitlab@yuyichao.com:"]
         insteadOf = yycgit:
+[pull]
+        rebase = false
