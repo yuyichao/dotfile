@@ -38,11 +38,11 @@ Height 500=500
 Height 540=1010
 Height 600=601
 Height 720=642
-Height 768=321
+Height 768=360
 MenuBar=Disabled
 State=AAAA/wAAAAD9AAAAAAAAB4AAAAfyAAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
-Width 1024=512
+Width 1024=960
 Width 1280=640
 Width 1366=683
 Width 1536=760
@@ -66,6 +66,9 @@ Window-Maximized 768x1368=true
 
 [Notification Messages]
 CloseAllTabs=true
+
+[Shortcut Schemes]
+Current Scheme=Default
 
 [TabBar]
 TabBarVisibility=1
