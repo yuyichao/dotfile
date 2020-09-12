@@ -50,6 +50,7 @@ if [ "$needs_subdir" = 1 ]; then
             add_subdir fontconfig
             add_subdir nacs-lab
             add_subdir qtcurve
+            add_subdir krdc
         fi
     fi
 fi
