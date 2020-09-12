@@ -49,6 +49,7 @@ if [ "$needs_subdir" = 1 ]; then
             add_subdir konsole
             add_subdir fontconfig
             add_subdir nacs-lab
+            add_subdir qtcurve
         fi
     fi
 fi
