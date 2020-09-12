@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xbel>
+<xbel xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks" xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info" dbusName="krdc" xmlns:kdepriv="http://www.kde.org/kdepriv">
+ <folder>
+  <title>历史</title>
+  <info>
+   <metadata owner="http://www.kde.org">
+    <krdc-history>historyfolder</krdc-history>
+   </metadata>
+  </info>
+  <bookmark href="rdp://Simulation%20Computer@nacsctl-pub.nigrp.org:5624">
+   <title>Control</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1556631045</time_added>
+     <time_visited>1599942481</time_visited>
+     <visit_count>425</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://Wavemeter@128.103.90.109:6521">
+   <title>Wavemeter</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1558640875</time_added>
+     <time_visited>1599679896</time_visited>
+     <visit_count>80</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://M%20Squared@nacsctl-pub.nigrp.org:5638">
+   <title>Soft Shrimp</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1584370245</time_added>
+     <time_visited>1597081146</time_visited>
+     <visit_count>72</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://CrispyLobster@nacsctl-pub.nigrp.org:5637">
+   <title>Crispy Lobster</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1573865702</time_added>
+     <time_visited>1597081134</time_visited>
+     <visit_count>30</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://Tweezer1@nacsctl-pub.nigrp.org:5619">
+   <title>Thorlabs</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1487621167</time_added>
+     <time_visited>1597081086</time_visited>
+     <visit_count>238</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://coldmolecules@nacsctl-pub.nigrp.org:5618">
+   <title>rdp://coldmolecules@nacsctl-pub.nigrp.org:5618</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1521250923</time_added>
+     <time_visited>1593640614</time_visited>
+     <visit_count>2</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="vnc://localhost:2">
+   <title>vnc://localhost:2</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1584939571</time_added>
+     <time_visited>1591547155</time_visited>
+     <visit_count>33</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://Tweezer1@localhost:29373">
+   <title>Thorlabs@localhost</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1487713660</time_added>
+     <time_visited>1589953851</time_visited>
+     <visit_count>22</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://Tweezer5@128.103.90.33:7561">
+   <title>rdp://Tweezer5@128.103.90.33:7561</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1584477427</time_added>
+     <time_visited>1584477427</time_visited>
+     <visit_count>1</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://Tweezer1@128.103.90.65:5619">
+   <title>rdp://Tweezer1@128.103.90.65:5619</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1537129514</time_added>
+     <time_visited>1557628912</time_visited>
+     <visit_count>123</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://Simulation%20Computer@128.103.90.65:5624">
+   <title>rdp://Simulation Computer@128.103.90.65:5624</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1547859030</time_added>
+     <time_visited>1556631021</time_visited>
+     <visit_count>126</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://Simulation%20Computer@192.168.0.100">
+   <title>rdp://Simulation Computer@192.168.0.100</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1556630990</time_added>
+     <time_visited>1556630990</time_visited>
+     <visit_count>1</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://Simulation%20Computer@192.168.0.112">
+   <title>rdp://Simulation Computer@192.168.0.112</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1547858926</time_added>
+     <time_visited>1547859128</time_visited>
+     <visit_count>2</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://Temp@128.103.90.65:5618">
+   <title>rdp://Temp@128.103.90.65:5618</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1499732834</time_added>
+     <time_visited>1547636624</time_visited>
+     <visit_count>190</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://Temp@192.168.0.102:3389">
+   <title>rdp://Temp@192.168.0.102:3389</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1521252940</time_added>
+     <time_visited>1521252955</time_visited>
+     <visit_count>2</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://appveyor@74.205.54.20:34070">
+   <title>rdp://appveyor@74.205.54.20:34070</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1498200526</time_added>
+     <time_visited>1498200575</time_visited>
+     <visit_count>3</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://appveyor@74.205.54.20:34036">
+   <title>rdp://appveyor@74.205.54.20:34036</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1498193255</time_added>
+     <time_visited>1498193255</time_visited>
+     <visit_count>1</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://appveyor@74.205.54.20:34201">
+   <title>rdp://appveyor@74.205.54.20:34201</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1498192157</time_added>
+     <time_visited>1498192157</time_visited>
+     <visit_count>1</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+ </folder>
+</xbel>
