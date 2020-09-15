@@ -25,3 +25,5 @@
         rebase = false
 [commit]
         gpgsign = true
+[credential]
+	helper = store
