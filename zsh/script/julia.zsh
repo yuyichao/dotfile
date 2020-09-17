@@ -21,6 +21,7 @@ julia_base_opts=(prefix=/usr sysconfdir=/etc
                  USE_SYSTEM_PATCHELF=1
                  USE_SYSTEM_ZLIB=1
                  USE_SYSTEM_P7ZIP=1
+                 USE_SYSTEM_NGHTTP2=1
                  USE_LLVM_SHLIB=1
                  USE_BINARYBUILDER=0
                  LLVM_USE_CMAKE=0
