@@ -104,6 +104,10 @@ alias "nwemacs=emacs -nw"
 #     alias 'ssh=ssh -X'
 # }
 
+if [[ -x /opt/homebrew/bin/brew ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 if which dircolors &> /dev/null; then
    eval $(dircolors 2> /dev/null)
 fi
