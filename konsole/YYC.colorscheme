@@ -11,7 +11,7 @@ Color=255,255,202
 Color=255,255,202
 
 [Color0]
-Color=148,159,113
+Color=45,48,34
 
 [Color0Faint]
 Color=95,114,43
@@ -47,13 +47,13 @@ Color=196,160,0
 Color=166,152,34
 
 [Color4]
-Color=42,135,255
+Color=33,81,255
 
 [Color4Faint]
-Color=42,135,255
+Color=0,17,255
 
 [Color4Intense]
-Color=0,132,255
+Color=0,123,255
 
 [Color5]
 Color=178,24,178
@@ -92,6 +92,8 @@ Color=0,0,0
 Color=0,0,0
 
 [General]
+Blur=true
+ColorRandomization=false
 Description=YYC
-Opacity=0.8
+Opacity=0.6
 Wallpaper=

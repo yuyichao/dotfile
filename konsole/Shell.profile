@@ -13,6 +13,7 @@ Command=/bin/zsh --login
 Directory=~
 Environment=TERM=xterm-256color
 Icon=utilities-terminal
+InvertSelectionColors=true
 LocalTabTitleFormat=%w
 MouseWheelZoomEnabled=false
 Name=Shell
