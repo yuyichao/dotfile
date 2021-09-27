@@ -4,7 +4,8 @@ Height 1200=1128
 Height 2160=2020
 Height 720=642
 MenuBar=Disabled
-State=AAAA/wAAAAD9AAAAAQAAAAAAAAGYAAAHrfwCAAAAAfsAAAAwAHIAZQBtAG8AdABlAEQAZQBzAGsAdABvAHAAcwBEAG8AYwBrAFcAaQBkAGcAZQB0AAAAADcAAAetAAAAjQD///8AAAeAAAAESQAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAABAAAAMABrAHIAZABjAF8AcgBlAG0AbwB0AGUAXwB2AGkAZQB3AF8AdABvAG8AbABiAGEAcgEAAAAA/////wAAAAAAAAAA
+RestorePositionForNextInstance=false
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAGYAAAHrfwCAAAAAfsAAAAwAHIAZQBtAG8AdABlAEQAZQBzAGsAdABvAHAAcwBEAG8AYwBrAFcAaQBkAGcAZQB0AAAAADcAAAetAAAAjQD///8AAAPAAAAEUwAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAABAAAAMABrAHIAZABjAF8AcgBlAG0AbwB0AGUAXwB2AGkAZQB3AF8AdABvAG8AbABiAGEAcgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 Width 1280=1280
 Width 1920=1920
@@ -16,11 +17,11 @@ Window-Maximized 540x960=true
 Window-Maximized 720x1280=true
 Window-Maximized 768x1024=true
 Window-Maximized 768x1366=true
-eDP-1 Height 1200=1129
+eDP-1 Height 1200=1139
 eDP-1 Width 1920=960
 eDP-1 Window-Maximized 1200x1920=true
 eDP-1 XPosition=0
-eDP-1 YPosition=72
+eDP-1 YPosition=61
 
 [Notification Messages]
 DoNotAskBeforeExit=false
@@ -162,6 +163,22 @@ soundSystem=0
 walletSupport=true
 width=0
 
+[hostpreferences][rdp://Simulation Computer@nacs.nigrp.org:5624]
+colorDepth=1
+console=false
+extraOptions=
+height=0
+keyboardLayout=7
+performance=2
+remoteFX=true
+resolution=7
+shareMedia=/home/yuyichao/Share
+showConfigAgain=false
+sound=0
+soundSystem=0
+walletSupport=true
+width=0
+
 [hostpreferences][rdp://Simulation Computer@nacsctl-pub.nigrp.org:5624]
 colorDepth=1
 console=false
@@ -287,6 +304,22 @@ shareMedia=/home/yuyichao/Share
 showConfigAgain=false
 sound=0
 soundSystem=1
+walletSupport=true
+width=0
+
+[hostpreferences][rdp://Tweezer5@nacsctl-pub.nigrp.org:5623]
+colorDepth=1
+console=false
+extraOptions=
+height=0
+keyboardLayout=7
+performance=2
+remoteFX=true
+resolution=7
+shareMedia=/home/yuyichao/Share
+showConfigAgain=false
+sound=0
+soundSystem=0
 walletSupport=true
 width=0
 

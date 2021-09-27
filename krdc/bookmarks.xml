@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xbel>
-<xbel xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info" xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks" dbusName="krdc" xmlns:kdepriv="http://www.kde.org/kdepriv">
+<xbel xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks" xmlns:kdepriv="http://www.kde.org/kdepriv" xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info" dbusName="krdc">
  <folder>
   <title>历史</title>
   <info>
@@ -8,16 +8,16 @@
     <krdc-history>historyfolder</krdc-history>
    </metadata>
   </info>
-  <bookmark href="rdp://Wavemeter@128.103.90.109:6521">
-   <title>Wavemeter</title>
+  <bookmark href="rdp://Simulation%20Computer@nacs.nigrp.org:5624">
+   <title>rdp://Simulation Computer@nacs.nigrp.org:5624</title>
    <info>
     <metadata owner="http://freedesktop.org">
      <bookmark:icon name=""/>
     </metadata>
     <metadata owner="http://www.kde.org">
-     <time_added>1558640875</time_added>
-     <time_visited>1600315418</time_visited>
-     <visit_count>82</visit_count>
+     <time_added>1615582618</time_added>
+     <time_visited>1615677499</time_visited>
+     <visit_count>4</visit_count>
     </metadata>
    </info>
   </bookmark>
@@ -29,8 +29,34 @@
     </metadata>
     <metadata owner="http://www.kde.org">
      <time_added>1556631045</time_added>
-     <time_visited>1600313725</time_visited>
-     <visit_count>442</visit_count>
+     <time_visited>1615582569</time_visited>
+     <visit_count>526</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://Wavemeter@128.103.90.109:6521">
+   <title>Wavemeter</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1558640875</time_added>
+     <time_visited>1614430069</time_visited>
+     <visit_count>101</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://Tweezer5@nacsctl-pub.nigrp.org:5623">
+   <title>rdp://Tweezer5@nacsctl-pub.nigrp.org:5623</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1601251093</time_added>
+     <time_visited>1601251908</time_visited>
+     <visit_count>2</visit_count>
     </metadata>
    </info>
   </bookmark>
