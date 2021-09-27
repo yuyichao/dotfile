@@ -6,4 +6,6 @@ xset r rate 300 200
 export XMODIFIERS=@im=fcitx
 export GTK_IM_MODULE=fcitx
 export QT_IM_MODULE=fcitx
+export MOZ_USE_XINPUT2=1
+export MOZ_X11_EGL=1
 xkbcomp ~/.config/emacs-layout.xkb -o $DISPLAY
