@@ -26,6 +26,6 @@
 [commit]
         gpgsign = true
 [credential]
-	helper = store
+        helper = store
 [init]
-	defaultBranch = master
+        defaultBranch = master
