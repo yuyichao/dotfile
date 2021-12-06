@@ -26,6 +26,7 @@ HISTFILESIZE=65536
 
 if (which uname; [[ $(uname) = Darwin ]]) &> /dev/null; then
     alias ls='ls -G'
+    alias nproc='sysctl -n hw.logicalcpu'
 else
     alias ls='ls --color=auto'
     alias dir='dir --color=auto'

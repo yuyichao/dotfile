@@ -34,6 +34,10 @@ else
 fi
 export CFLAGS="-g -Wall -Wextra ${_cwflags} -pipe"
 export CXXFLAGS="-g -Wall -Wextra ${_cwflags} -pipe"
+
+if (which uname; [[ $(uname) = Darwin ]]) &> /dev/null; then
+    alias nproc='sysctl -n hw.logicalcpu'
+fi
 if [[ -n $MAKEFLAGS ]]; then
     export MAKEFLAGS="$MAKEFLAGS --no-print-directory"
 elif (which nproc && nproc) &> /dev/null; then
