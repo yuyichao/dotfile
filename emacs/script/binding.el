@@ -99,4 +99,4 @@
 (define-key key-translation-map (kbd "<up>") (kbd "C-p"))
 (define-key key-translation-map (kbd "<down>") (kbd "C-n"))
 (define-key key-translation-map (kbd "<end>") (kbd "C-e"))
-;; (define-key key-translation-map (kbd "<home>") (kbd "C-q"))
+(define-key key-translation-map (kbd "<home>") (kbd "C-q"))
