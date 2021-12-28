@@ -65,6 +65,7 @@
  '(verilog-align-ifelse t)
  '(verilog-auto-lineup 'ignore)
  '(verilog-auto-newline nil)
+ '(verilog-indent-level-directive 0)
  '(verilog-minimum-comment-distance 0)
  '(which-function-mode t)
  '(whitespace-style
