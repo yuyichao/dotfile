@@ -5,7 +5,7 @@ Height 2160=2020
 Height 720=642
 MenuBar=Disabled
 RestorePositionForNextInstance=false
-State=AAAA/wAAAAD9AAAAAQAAAAAAAAGYAAAHrfwCAAAAAfsAAAAwAHIAZQBtAG8AdABlAEQAZQBzAGsAdABvAHAAcwBEAG8AYwBrAFcAaQBkAGcAZQB0AAAAADcAAAetAAAAjQD///8AAAPAAAAEUwAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAABAAAAMABrAHIAZABjAF8AcgBlAG0AbwB0AGUAXwB2AGkAZQB3AF8AdABvAG8AbABiAGEAcgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAGYAAAHrfwCAAAAAfsAAAAwAHIAZQBtAG8AdABlAEQAZQBzAGsAdABvAHAAcwBEAG8AYwBrAFcAaQBkAGcAZQB0AAAAADcAAAetAAAAjQD///8AAAJYAAABkAAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAABAAAAMABrAHIAZABjAF8AcgBlAG0AbwB0AGUAXwB2AGkAZQB3AF8AdABvAG8AbABiAGEAcgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 Width 1280=1280
 Width 1920=1920
@@ -18,10 +18,14 @@ Window-Maximized 720x1280=true
 Window-Maximized 768x1024=true
 Window-Maximized 768x1366=true
 eDP-1 Height 1200=1139
+eDP-1 Height 1920x1200=432
 eDP-1 Width 1920=960
+eDP-1 Width 1920x1200=600
 eDP-1 Window-Maximized 1200x1920=true
 eDP-1 XPosition=0
+eDP-1 XPosition 1920x1200=0
 eDP-1 YPosition=61
+eDP-1 YPosition 1920x1200=67
 
 [Notification Messages]
 DoNotAskBeforeExit=false
@@ -450,6 +454,68 @@ sound=0
 soundSystem=0
 walletSupport=false
 width=800
+
+[hostpreferences][vnc://66.94.106.177:63089]
+dont_copy_passwords=false
+quality=2
+scaleFactor=100
+showConfigAgain=true
+ssh_tunnel_port=22
+ssh_tunnel_user_name=
+use_ssh_tunnel=false
+use_ssh_tunnel_loopback=false
+walletSupport=true
+windowedScale=false
+
+[hostpreferences][vnc://66.94.106.179:63061]
+dont_copy_passwords=false
+height=1097
+quality=2
+scaleFactor=100
+showConfigAgain=false
+ssh_tunnel_port=22
+ssh_tunnel_user_name=
+use_ssh_tunnel=false
+use_ssh_tunnel_loopback=false
+walletSupport=true
+width=956
+windowedScale=true
+
+[hostpreferences][vnc://66.94.106.180:63061]
+dont_copy_passwords=false
+quality=2
+scaleFactor=100
+showConfigAgain=true
+ssh_tunnel_port=22
+ssh_tunnel_user_name=
+use_ssh_tunnel=false
+use_ssh_tunnel_loopback=false
+walletSupport=true
+windowedScale=false
+
+[hostpreferences][vnc://69.94.0.179:63061]
+dont_copy_passwords=false
+quality=2
+scaleFactor=100
+showConfigAgain=true
+ssh_tunnel_port=22
+ssh_tunnel_user_name=
+use_ssh_tunnel=false
+use_ssh_tunnel_loopback=false
+walletSupport=true
+windowedScale=false
+
+[hostpreferences][vnc://69.94.106.179:63061]
+dont_copy_passwords=false
+quality=2
+scaleFactor=100
+showConfigAgain=true
+ssh_tunnel_port=22
+ssh_tunnel_user_name=
+use_ssh_tunnel=false
+use_ssh_tunnel_loopback=false
+walletSupport=true
+windowedScale=false
 
 [hostpreferences][vnc://Simulation Computer@192.168.0.112]
 quality=1
