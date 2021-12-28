@@ -27,7 +27,13 @@
  '(py-start-run-py-shell nil)
  '(py-use-number-face-p nil t)
  '(safe-local-variable-values
-   '((TeX-master . dissertation\.tex)
+   '((eval c-set-offset 'innamespace 0)
+     (eval c-set-offset 'brace-list-open 0)
+     (eval when
+           (fboundp 'c-toggle-comment-style)
+           (c-toggle-comment-style 1))
+     (c-set-style . "K&R")
+     (TeX-master . dissertation\.tex)
      (LaTeX-command-style
       ("" "SOURCE_DATE_EPOCH=0 %(PDF)%(latex) --shell-escape %S%(PDFout)"))
      (LaTeX-command-style quote
