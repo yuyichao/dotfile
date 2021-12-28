@@ -1,14 +1,14 @@
 [Background]
-Color=255,255,202
+Color=255,253,225
 MaxRandomHue=0
 MaxRandomSaturation=0
 MaxRandomValue=0
 
 [BackgroundFaint]
-Color=255,255,202
+Color=255,253,225
 
 [BackgroundIntense]
-Color=255,255,202
+Color=255,253,225
 
 [Color0]
 Color=45,48,34
@@ -38,10 +38,10 @@ Color=67,138,0
 Color=86,175,0
 
 [Color3]
-Color=196,160,0
+Color=168,134,0
 
 [Color3Faint]
-Color=196,160,0
+Color=180,144,0
 
 [Color3Intense]
 Color=166,152,34
@@ -95,5 +95,5 @@ Color=0,0,0
 Blur=true
 ColorRandomization=false
 Description=YYC
-Opacity=0.6
+Opacity=0.7
 Wallpaper=
