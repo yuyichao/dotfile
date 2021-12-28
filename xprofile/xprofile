@@ -9,3 +9,7 @@ export QT_IM_MODULE=fcitx
 export MOZ_USE_XINPUT2=1
 export MOZ_X11_EGL=1
 xkbcomp ~/.config/emacs-layout.xkb -o $DISPLAY
+if [ -n "$DESKTOP_SESSION" ] && which gnome-keyring-daemon &> /dev/null; then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
