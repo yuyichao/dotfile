@@ -26,6 +26,7 @@ StartInCurrentSessionDir=true
 TabBarMode=1
 
 [Interaction Options]
+ColorFilterEnabled=false
 CtrlRequiredForDrag=true
 MouseWheelZoomEnabled=false
 TrimTrailingSpacesInSelectedText=true
