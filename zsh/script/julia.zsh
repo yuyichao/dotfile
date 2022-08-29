@@ -24,6 +24,7 @@ julia_base_opts=(prefix=/usr sysconfdir=/etc
                  USE_SYSTEM_NGHTTP2=1
                  USE_LLVM_SHLIB=1
                  USE_BINARYBUILDER=0
+                 USE_BLAS64=0
                  LLVM_USE_CMAKE=0
                  LIBBLASNAME=libopenblas
                  LIBBLAS=-lopenblas
@@ -35,7 +36,7 @@ arch=$(uname -m 2> /dev/null)
 
 _jl_x86_target='generic,opt_size;haswell,clone_all,-rdrnd;skylake,base(1),-rdrnd,-rdseed,-rtm;cannonlake,base(1),-rdrnd,-rdseed,-rtm'
 _jl_arm_target='armv7-a;armv7-a,neon;armv7-a,neon,vfp4'
-_jl_aa64_target='generic;cortex-a57;thunderx2t99'
+_jl_aa64_target='generic;cortex-a57;apple-m1'
 
 _jl_x86_single_target='native,-rdrnd,-rdseed,-rtm'
 _jl_arm_single_target='native'
