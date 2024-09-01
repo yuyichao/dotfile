@@ -1,36 +1,33 @@
 #
 
 julia_base_opts=(prefix=/usr sysconfdir=/etc
+                 USE_SYSTEM_LIBWHICH=0
+                 USE_SYSTEM_CSL=1
                  USE_SYSTEM_LLVM=1
-                 USE_SYSTEM_OPENLIBM=1
                  USE_SYSTEM_LIBUNWIND=1
                  USE_SYSTEM_PCRE=1
-                 USE_SYSTEM_OPENSPECFUN=1
+                 USE_SYSTEM_OPENLIBM=1
                  USE_SYSTEM_BLAS=1
                  USE_SYSTEM_LAPACK=1
-                 USE_SYSTEM_FFTW=1
                  USE_SYSTEM_GMP=1
                  USE_SYSTEM_MPFR=1
-                 USE_SYSTEM_ARPACK=1
-                 USE_SYSTEM_SUITESPARSE=1
+                 USE_SYSTEM_LIBSUITESPARSE=1
+                 USE_SYSTEM_LIBBLASTRAMPOLINE=1
                  USE_SYSTEM_UTF8PROC=1
-                 USE_SYSTEM_LIBGIT2=1
-                 USE_SYSTEM_LIBSSH2=1
                  USE_SYSTEM_MBEDTLS=1
+                 USE_SYSTEM_LIBSSH2=1
+                 USE_SYSTEM_NGHTTP2=1
                  USE_SYSTEM_CURL=1
+                 USE_SYSTEM_LIBGIT2=1
                  USE_SYSTEM_PATCHELF=1
                  USE_SYSTEM_ZLIB=1
                  USE_SYSTEM_P7ZIP=1
-                 USE_SYSTEM_NGHTTP2=1
+                 USE_SYSTEM_LLD=1
+                 USE_INTEL_JITEVENTS=0
                  USE_LLVM_SHLIB=1
                  USE_BINARYBUILDER=0
-                 USE_BLAS64=0
-                 LLVM_USE_CMAKE=0
-                 LIBBLASNAME=libopenblas
-                 LIBBLAS=-lopenblas
-                 LIBLAPACKNAME=libopenblas
-                 LIBLAPACK=-lopenblas
-                 BUNDLE_DEBUG_LIBS=1)
+                 WITH_TERMINFO=0
+                 LLVM_USE_CMAKE=0)
 
 arch=$(uname -m 2> /dev/null)
 
