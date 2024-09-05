@@ -17,7 +17,8 @@
  '(history-length t)
  '(julia-indent-offset 4)
  '(octave-block-offset 4)
- '(pdb-path '/usr/lib/python3\.3/pdb\.py)
+ '(pdb-path '/usr/lib/python3.3/pdb.py)
+ '(pixel-scroll-precision-mode t)
  '(pkgbuild-update-sums-on-save nil)
  '(py-beep-if-tab-change nil)
  '(py-complete-function 'py-shell-complete)
@@ -33,7 +34,7 @@
            (fboundp 'c-toggle-comment-style)
            (c-toggle-comment-style 1))
      (c-set-style . "K&R")
-     (TeX-master . dissertation\.tex)
+     (TeX-master . dissertation.tex)
      (LaTeX-command-style
       ("" "SOURCE_DATE_EPOCH=0 %(PDF)%(latex) --shell-escape %S%(PDFout)"))
      (LaTeX-command-style quote
