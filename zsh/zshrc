@@ -5,6 +5,8 @@ if [[ $TERM = vt220 ]]; then
     TERM=xterm-256color
 fi
 
+if [ -e ${HOME}/.nix-profile/etc/profile.d/nix.sh ]; then . ${HOME}/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
 ZSH="${HOME}/.config/zsh"
 source "$ZSH/loader.zsh"
 
