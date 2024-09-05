@@ -153,5 +153,6 @@
 (autoload 'go-mode "go-mode.el" "Go mode." t)
 (add-to-list 'auto-mode-alist '("\\.go$" . go-mode))
 
-(if (try-require 'rust-ts-mode)
-    (add-to-list 'auto-mode-alist '("\\.rs$" . rust-ts-mode)))
+(if (try-require 'rust-mode)
+    (add-to-list 'auto-mode-alist '("\\.rs$" . rust-mode))
+  (add-to-list 'auto-mode-alist '("\\.rs$" . rust-ts-mode)))
