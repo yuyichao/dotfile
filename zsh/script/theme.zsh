@@ -29,7 +29,11 @@ set_term_title() {
 }
 
 function _term_title_precmd {
-    print -P $'%{\e[01;31m%}%m%{\e[01;35m%}:%{\e[01;34m%}%~'
+    if [[ -n "${IN_NIX_SHELL}" ]]; then
+        print -P $'%{\e[01;33m%}%m(nix)%{\e[01;35m%}:%{\e[01;34m%}%~'
+    else
+        print -P $'%{\e[01;31m%}%m%{\e[01;35m%}:%{\e[01;34m%}%~'
+    fi
     set_term_title "$(print -nP "${TERM_TITLE}")"
 }
 
