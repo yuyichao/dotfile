@@ -15,6 +15,8 @@ bindkey_nonempty "${terminfo[kend]}" end-of-line
 bindkey_nonempty "${terminfo[kdch1]}" delete-char
 bindkey_nonempty "\e[A" history-beginning-search-backward
 bindkey_nonempty "\e[B" history-beginning-search-forward
+bindkey_nonempty "^[OA" history-beginning-search-backward
+bindkey_nonempty "^[OB" history-beginning-search-forward
 bindkey_nonempty "^P" history-beginning-search-backward
 bindkey_nonempty "^N" history-beginning-search-forward
 # bindkey_nonempty "^H" backward-kill-line
