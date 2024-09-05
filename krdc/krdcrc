@@ -1,11 +1,27 @@
 [MainWindow]
+2560x1600 screen: Height=1497
+2560x1600 screen: Width=1269
+2560x1600 screen: Window-Maximized=true
+2560x1600 screen: XPosition=645
+2560x1600 screen: YPosition=94
 Height 1080=1010
 Height 1200=1128
 Height 2160=2020
 Height 720=642
 MenuBar=Disabled
+None-1=None-1
+None-1 Height 1707x1067=432
+None-1 Height 1707x1067 None-1=432
+None-1 Width 1707x1067=873
+None-1 Width 1707x1067 None-1=873
+None-1 Window-Maximized 1707x1067=true
+None-1 Window-Maximized 1707x1067 None-1=true
+None-1 XPosition 1707x1067=417
+None-1 XPosition 1707x1067 None-1=417
+None-1 YPosition 1707x1067=345
+None-1 YPosition 1707x1067 None-1=345
 RestorePositionForNextInstance=false
-State=AAAA/wAAAAD9AAAAAQAAAAAAAAGYAAAHrfwCAAAAAfsAAAAwAHIAZQBtAG8AdABlAEQAZQBzAGsAdABvAHAAcwBEAG8AYwBrAFcAaQBkAGcAZQB0AAAAADcAAAetAAAAjQD///8AAAJYAAABkAAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAABAAAAMABrAHIAZABjAF8AcgBlAG0AbwB0AGUAXwB2AGkAZQB3AF8AdABvAG8AbABiAGEAcgEAAAAA/////wAAAAAAAAAA
+State=AAAA/wAAAAD9AAAAAQAAAAAAAAGYAAAHrfwCAAAAAfsAAAAwAHIAZQBtAG8AdABlAEQAZQBzAGsAdABvAHAAcwBEAG8AYwBrAFcAaQBkAGcAZQB0AAAAADcAAAetAAAAnQD///8AAAoAAAAFwAAAAAQAAAAEAAAACAAAAAj8AAAAAQAAAAIAAAABAAAAMABrAHIAZABjAF8AcgBlAG0AbwB0AGUAXwB2AGkAZQB3AF8AdABvAG8AbABiAGEAcgEAAAAA/////wAAAAAAAAAA
 ToolBarsMovable=Disabled
 Width 1280=1280
 Width 1920=1920
@@ -17,15 +33,21 @@ Window-Maximized 540x960=true
 Window-Maximized 720x1280=true
 Window-Maximized 768x1024=true
 Window-Maximized 768x1366=true
+eDP-1=eDP-1
 eDP-1 Height 1200=1139
 eDP-1 Height 1920x1200=432
+eDP-1 Height 2560x1600 eDP-1=644
 eDP-1 Width 1920=960
 eDP-1 Width 1920x1200=600
+eDP-1 Width 2560x1600 eDP-1=804
 eDP-1 Window-Maximized 1200x1920=true
+eDP-1 Window-Maximized 2560x1600 eDP-1=true
 eDP-1 XPosition=0
 eDP-1 XPosition 1920x1200=0
+eDP-1 XPosition 2560x1600 eDP-1=843
 eDP-1 YPosition=61
 eDP-1 YPosition 1920x1200=67
+eDP-1 YPosition 2560x1600 eDP-1=621
 
 [Notification Messages]
 DoNotAskBeforeExit=false
@@ -112,6 +134,23 @@ keyboardLayout=7
 performance=2
 remoteFX=true
 resolution=7
+shareMedia=/home/yuyichao/Share
+showConfigAgain=false
+sound=0
+soundSystem=0
+walletSupport=true
+width=0
+
+[hostpreferences][rdp://Montana Instruments@q-drive.yuyichao.com:37699]
+colorDepth=1
+console=false
+extraOptions=
+height=0
+keyboardLayout=7
+performance=2
+remoteFX=true
+resolution=7
+scaleFactor=100
 shareMedia=/home/yuyichao/Share
 showConfigAgain=false
 sound=0
@@ -391,6 +430,23 @@ soundSystem=0
 walletSupport=false
 width=0
 
+[hostpreferences][rdp://brassboard hardware@10.236.176.2]
+colorDepth=1
+console=false
+extraOptions=
+height=0
+keyboardLayout=7
+performance=2
+remoteFX=true
+resolution=7
+scaleFactor=100
+shareMedia=/home/yuyichao/Share
+showConfigAgain=true
+sound=0
+soundSystem=0
+walletSupport=true
+width=0
+
 [hostpreferences][rdp://coldmolecules@nacsctl-pub.nigrp.org:5618]
 colorDepth=1
 console=false
@@ -454,6 +510,18 @@ sound=0
 soundSystem=0
 walletSupport=false
 width=800
+
+[hostpreferences][vnc://10.236.176.28]
+dont_copy_passwords=false
+quality=2
+scaleFactor=0
+showConfigAgain=true
+ssh_tunnel_port=22
+ssh_tunnel_user_name=euriqa
+use_ssh_tunnel=true
+use_ssh_tunnel_loopback=true
+walletSupport=true
+windowedScale=false
 
 [hostpreferences][vnc://66.94.106.177:63089]
 dont_copy_passwords=false
@@ -535,3 +603,68 @@ use_ssh_tunnel_loopback=false
 walletSupport=true
 width=1916
 windowedScale=true
+
+[hostpreferences][vnc://localhost:5900]
+dont_copy_passwords=false
+quality=2
+scaleFactor=100
+showConfigAgain=true
+ssh_tunnel_port=8823
+ssh_tunnel_user_name=yuyichao
+use_ssh_tunnel=true
+use_ssh_tunnel_loopback=true
+walletSupport=true
+windowedScale=false
+
+[hostpreferences][vnc://localhost:5901]
+dont_copy_passwords=false
+quality=2
+scaleFactor=100
+showConfigAgain=true
+ssh_tunnel_port=22
+ssh_tunnel_user_name=
+use_ssh_tunnel=false
+use_ssh_tunnel_loopback=false
+walletSupport=true
+windowedScale=false
+
+[hostpreferences][vnc://localhost:5902]
+dont_copy_passwords=false
+height=1466
+quality=3
+scaleFactor=0
+showConfigAgain=true
+ssh_tunnel_port=22
+ssh_tunnel_user_name=
+use_ssh_tunnel=false
+use_ssh_tunnel_loopback=false
+walletSupport=true
+width=2556
+windowedScale=false
+
+[hostpreferences][vnc://rdp%3A%2F%2FMontana Instruments@q-drive.yuyichao.com:37699]
+dont_copy_passwords=false
+quality=2
+scaleFactor=100
+showConfigAgain=true
+ssh_tunnel_port=22
+ssh_tunnel_user_name=
+use_ssh_tunnel=false
+use_ssh_tunnel_loopback=false
+walletSupport=true
+windowedScale=false
+
+[hostpreferences][vnc://yuyichao.com:5900]
+dont_copy_passwords=false
+grabAllKeys=true
+height=1468
+quality=2
+scaleFactor=0
+showConfigAgain=true
+ssh_tunnel_port=8823
+ssh_tunnel_user_name=yuyichao
+use_ssh_tunnel=true
+use_ssh_tunnel_loopback=true
+walletSupport=true
+width=2556
+windowedScale=false

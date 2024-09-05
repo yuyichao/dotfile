@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE xbel>
-<xbel xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info" xmlns:kdepriv="http://www.kde.org/kdepriv" xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks" dbusName="krdc">
+<xbel xmlns:bookmark="http://www.freedesktop.org/standards/desktop-bookmarks" dbusName="krdc" xmlns:mime="http://www.freedesktop.org/standards/shared-mime-info" xmlns:kdepriv="http://www.kde.org/kdepriv">
  <folder>
   <title>历史</title>
   <info>
@@ -8,6 +8,84 @@
     <krdc-history>historyfolder</krdc-history>
    </metadata>
   </info>
+  <bookmark href="vnc://localhost:5902">
+   <title>vnc://localhost:5902</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1716526444</time_added>
+     <time_visited>1722652208</time_visited>
+     <visit_count>7</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="vnc://yuyichao.com:5900">
+   <title>Dell Laptop</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1716555389</time_added>
+     <time_visited>1719150141</time_visited>
+     <visit_count>6</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="vnc://10.236.176.28">
+   <title>vnc://10.236.176.28</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1716993823</time_added>
+     <time_visited>1716993823</time_visited>
+     <visit_count>1</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://brassboard%20hardware@10.236.176.2">
+   <title>rdp://brassboard hardware@10.236.176.2</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1683810289</time_added>
+     <time_visited>1683810323</time_visited>
+     <visit_count>3</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="rdp://Montana%20Instruments@q-drive.yuyichao.com:37699">
+   <title>rdp://Montana Instruments@q-drive.yuyichao.com:37699</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1672108622</time_added>
+     <time_visited>1672108648</time_visited>
+     <visit_count>2</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
+  <bookmark href="vnc://localhost:5900">
+   <title>vnc://localhost:5900</title>
+   <info>
+    <metadata owner="http://freedesktop.org">
+     <bookmark:icon name=""/>
+    </metadata>
+    <metadata owner="http://www.kde.org">
+     <time_added>1664905926</time_added>
+     <time_visited>1669389962</time_visited>
+     <visit_count>2</visit_count>
+    </metadata>
+   </info>
+  </bookmark>
   <bookmark href="vnc://66.94.106.177:63089">
    <title>vnc://66.94.106.177:63089</title>
    <info>
