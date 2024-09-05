@@ -35,3 +35,6 @@ alias afind='ack-grep -il'
 
 alias em='emacs'
 alias 'sudo=sudo '
+if which nix-shell &> /dev/null; then
+    alias 'nix-shell=nix-shell --command zsh'
+fi
