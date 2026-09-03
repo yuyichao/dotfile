@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (defun backward-kill-line (arg)
   (interactive "p")
   (kill-line 0))

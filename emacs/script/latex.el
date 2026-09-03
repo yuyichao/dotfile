@@ -1,7 +1,10 @@
+;; -*- lexical-binding: t; -*-
+
 (condition-case nil
     (progn
       (load "auctex.el" nil t t)
-      (load "preview-latex.el" nil t t))
+      (load "preview-latex.el" nil t t)
+      )
   (error nil))
 (defun my-latex-mode()
   (interactive)

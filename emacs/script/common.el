@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (setq default-directory "~/")
 (setq backup-inhibited t)
 (setq visible-bell nil)

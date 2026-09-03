@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (setq inhibit-startup-screen t)
 (setq frame-title-format "%b %f")
 ;; (setq frame-title-format "%b")

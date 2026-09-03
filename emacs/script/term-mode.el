@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t; -*-
 (add-hook 'shell-mode-hook 'mode-hook-func)
 (add-hook 'gdb-mode-hook 'mode-hook-func)
 (defun mode-hook-func ()

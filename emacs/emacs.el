@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (add-to-list 'load-path "~/.emacs.d/module")
 (setq py-use-number-face-p nil)
 (custom-set-variables

@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
 (require 'font-lock)

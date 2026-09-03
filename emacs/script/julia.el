@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (autoload 'julia-mode "julia-mode.el"
   "Major mode for editing Julia source files" t)
 (add-to-list 'auto-mode-alist '("\\.jl$" . julia-mode))

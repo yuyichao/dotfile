@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (autoload 'pkgbuild-mode "pkgbuild-mode.el" "PKGBUILD mode." t)
 (add-to-list 'auto-mode-alist
              '("/\\(_\\)?PKGBUILD\\(-git\\)?$" . pkgbuild-mode))

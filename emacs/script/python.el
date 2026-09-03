@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (autoload 'python-mode "python-mode.el" "Python mode." t)
 (add-to-list 'auto-mode-alist '("\\.py$" . python-mode))
 

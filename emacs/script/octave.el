@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (setq octave-mode-hook
       (lambda () (progn (setq octave-comment-char ?%)
                         (setq comment-start "%")

@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 ;; (autoload 'c-mode "cc-mode.el" "C mode." t)
 ;; (autoload 'c++-mode "cc-mode.el" "C++ mode." t)
 (add-to-list 'auto-mode-alist '("\\.cl$" . c-mode))
